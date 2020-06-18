@@ -23,6 +23,7 @@ public class JumpIndicator : MonoBehaviour
     private float _indicatorRate = 0;
 
     [SerializeField]
+    [Tooltip("Don't play with this value.")]
     private float _jumpPower = 0;
 
     [SerializeField]
@@ -91,7 +92,11 @@ public class JumpIndicator : MonoBehaviour
     {
         bool increaseMode = true;
 
+        // Set jump power to min jump Limit
         _jumpPower = _minJumpPower;
+
+        // Reset JumpIndicator Color to initial color
+        ColorChanger(_indicatorPrefab);
 
         while (true)
         {
@@ -125,7 +130,7 @@ public class JumpIndicator : MonoBehaviour
                 }
             }
 
-            // Change JumpIndicator Color
+            // Update JumpIndicator Color
             ColorChanger(_indicatorPrefab);
         }
     }
