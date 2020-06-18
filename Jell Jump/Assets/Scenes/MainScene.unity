@@ -121,6 +121,80 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &278370612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7922507843719999390, guid: fc5e8c81263f272448b0503bcca282da,
+    type: 3}
+  m_PrefabInstance: {fileID: 580101729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &278370613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278370612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e64281ba9b038e4b808f9706413f8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  jumpLevel: 0
+  healthLevel: 0
+  totalGold: 0
+--- !u!114 &278370620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278370612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b895731395ff4547b9025ebd9090e9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &278370621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278370612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4a66e58cb1bbe48a0e40577b08c905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &278370622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278370612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68e44201da92d44294e936c9ed824fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _joystickPrefab: {fileID: 452008254072787855, guid: a9ac84814323ffa44a21b13739b9c7eb,
+    type: 3}
+  _indicatorPrefab: {fileID: 375737392}
+  _minJumpPower: 50
+  _maxJumpPower: 300
+  _indicatorRate: 0.04
+  _jumpPower: 0
+  _jumpIncreaseRate: 10
+  _jumpDecreaseRate: 10
+  _rotationScale: 0.15
+--- !u!1 &375737392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6496235372766657747, guid: fc5e8c81263f272448b0503bcca282da,
+    type: 3}
+  m_PrefabInstance: {fileID: 580101729}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &409261470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1122,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1689741720}
-  - component: {fileID: 1689741721}
   m_Layer: 0
   m_Name: ----------------
   m_TagString: Untagged
@@ -1072,26 +1145,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1689741721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689741719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68e44201da92d44294e936c9ed824fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _joystickPrefab: {fileID: 452008254072787855, guid: a9ac84814323ffa44a21b13739b9c7eb,
-    type: 3}
-  _minJumpPower: 20
-  _maxJumpPower: 100
-  _indicatorRate: 0.1
-  _jumpPower: 0
-  _jumpIncreaseRate: 8
-  _jumpDecreaseRate: 10
 --- !u!1 &1824086432
 GameObject:
   m_ObjectHideFlags: 0
