@@ -28,9 +28,21 @@ public class CharacterMovement : MonoBehaviour
     // Handle character stretch
     public void Stretch(float stretchAxis)
     {
-        GetComponent<Rigidbody>().isKinematic = true;
+        if (IsGrounded())
+        {
+            GetComponent<Rigidbody>().isKinematic = true;
 
-        //TODO
-        transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, stretchAxis * _stretchMultiplier, transform.rotation.w);
+            //TODO
+            transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, stretchAxis * _stretchMultiplier, transform.rotation.w);
+        }
+
+    }
+
+    // Controls whether character is grounded or
+    private bool IsGrounded()
+    {
+        float distToGround = GetComponent<BoxCollider>().bounds.extents.y;
+
+        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
 }
