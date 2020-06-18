@@ -98,7 +98,7 @@ PrefabInstance:
     - target: {fileID: 8535852527125041994, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
       propertyPath: m_Name
-      value: JellyPlayer
+      value: PJellyPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 8535852527125272020, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
