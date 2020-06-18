@@ -44,6 +44,9 @@ public class JumpIndicator : MonoBehaviour
     // Fires when Jump Indicator released
     public Action<float, Quaternion> OnIndicatorReleased;
 
+    // Fires while Jump Indicator dragging
+    public Action<float> OnIndicatorDrag;
+
     private void Start()
     {
         // Clone the PJoystick Prefab
@@ -55,6 +58,9 @@ public class JumpIndicator : MonoBehaviour
     {
         // Rotate JumpIndicator
         IndicatorRotator(dragAxis);
+
+        // Invokes OnIndicatorDrag
+        OnIndicatorDrag?.Invoke(dragAxis);
     }
 
     // When button is relased
@@ -66,7 +72,7 @@ public class JumpIndicator : MonoBehaviour
         // Stop JumpIndicator Action Coroutine
         StopCoroutine("IndicatorAction");
 
-        // Invoke OnIndicatorReleased with _jumpPower
+        // Invokes OnIndicatorReleased with _jumpPower
         OnIndicatorReleased?.Invoke(_jumpPower, _indicatorRotation);
     }
 

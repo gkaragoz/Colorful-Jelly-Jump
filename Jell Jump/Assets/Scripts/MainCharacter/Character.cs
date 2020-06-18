@@ -38,13 +38,19 @@ public class Character : MonoBehaviour
 
     private void OnEnable()
     {
-        GetComponent<JumpIndicator>().OnIndicatorReleased +=
+        GetComponent<CharacterController>().OnJumpDetect +=
             GetComponent<CharacterMovement>().Jump;
+
+        GetComponent<CharacterController>().OnStretchDetect +=
+            GetComponent<CharacterMovement>().Stretch;
     }
 
     private void OnDisable()
     {
-        GetComponent<JumpIndicator>().OnIndicatorReleased -=
+        GetComponent<CharacterController>().OnJumpDetect -=
             GetComponent<CharacterMovement>().Jump;
+
+        GetComponent<CharacterController>().OnStretchDetect -=
+         GetComponent<CharacterMovement>().Stretch;
     }
 }
