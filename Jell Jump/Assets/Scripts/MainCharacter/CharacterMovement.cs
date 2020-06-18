@@ -4,7 +4,7 @@ public class CharacterMovement : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("Increase value for more stretching")]
-    private float _stretchMultiplier = 1f;
+    private float _stretchMultiplier = .25f;
 
     [SerializeField]
     [Tooltip("Increase value for more jumping on Y axis")]
@@ -17,6 +17,8 @@ public class CharacterMovement : MonoBehaviour
     // Handle character jump
     public void Jump(float jumpPower, float jumpAxis)
     {
+        GetComponent<Rigidbody>().isKinematic = false;
+
         Vector3 rotation = new Vector3(-jumpAxis, _jumpYMultiplier, 0);
 
         //TODO
@@ -26,6 +28,9 @@ public class CharacterMovement : MonoBehaviour
     // Handle character stretch
     public void Stretch(float stretchAxis)
     {
+        GetComponent<Rigidbody>().isKinematic = true;
+
         //TODO
+        transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, stretchAxis * _stretchMultiplier, transform.rotation.w);
     }
 }
