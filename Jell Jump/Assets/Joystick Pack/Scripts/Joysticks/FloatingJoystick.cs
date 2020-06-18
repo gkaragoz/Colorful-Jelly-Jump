@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine.EventSystems;
+﻿using UnityEngine.EventSystems;
 
 public class FloatingJoystick : Joystick
 {
