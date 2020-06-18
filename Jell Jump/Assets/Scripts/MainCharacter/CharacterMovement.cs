@@ -9,7 +9,10 @@ public class CharacterMovement : MonoBehaviour
     // Handle character jump
     public void Jump(float jumpPower, Quaternion jumpRotation)
     {
+        Vector3 rotation = new Vector3(jumpRotation.x, jumpRotation.w, jumpRotation.z);
+
         //TODO
+        GetComponent<Rigidbody>().AddForce(rotation * jumpPower * 2 + transform.position);
     }
 
     // Handle character stretch
