@@ -38,6 +38,12 @@ public class JumpIndicator : MonoBehaviour
     [Tooltip("Defines JumpIndicator rotation scale")]
     private float _rotationScale = 0.5f;
 
+    // Defines Indicator Rotation
+    private Quaternion _indicatorRotation;
+
+    // Fires when Jump Indicator released
+    public Action<float, Quaternion> OnIndicatorReleased;
+
     private void Start()
     {
         // Clone the PJoystick Prefab
@@ -59,6 +65,9 @@ public class JumpIndicator : MonoBehaviour
 
         // Stop JumpIndicator Action Coroutine
         StopCoroutine("IndicatorAction");
+
+        // Invoke OnIndicatorReleased with _jumpPower
+        OnIndicatorReleased?.Invoke(_jumpPower, _indicatorRotation);
     }
 
     // When button is pressed
@@ -74,10 +83,12 @@ public class JumpIndicator : MonoBehaviour
     // Indicator rotation handler
     private void IndicatorRotator(float axis)
     {
-        _indicatorPrefab.transform.rotation = new Quaternion(_indicatorPrefab.transform.rotation.x,
+        _indicatorRotation = new Quaternion(_indicatorPrefab.transform.rotation.x,
          _indicatorPrefab.transform.rotation.y,
         axis * _rotationScale,
         _indicatorPrefab.transform.rotation.w);
+
+        _indicatorPrefab.transform.rotation = _indicatorRotation;
     }
 
     // Indicator color change handler

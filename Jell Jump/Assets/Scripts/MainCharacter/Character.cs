@@ -1,18 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController), typeof(CharacterMovement))]
 public class Character : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+
+    private void OnEnable()
     {
-        
+        GetComponent<JumpIndicator>().OnIndicatorReleased +=
+            GetComponent<CharacterMovement>().Jump;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        GetComponent<JumpIndicator>().OnIndicatorReleased -=
+            GetComponent<CharacterMovement>().Jump;
     }
 }

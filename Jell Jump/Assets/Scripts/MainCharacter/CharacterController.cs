@@ -1,18 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
-public class CharacterMovement1 : MonoBehaviour
+[RequireComponent(typeof(JumpIndicator))]
+public class CharacterController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Fires when character jump action detects
+    public Action OnJumpDetect;
+
+    // Represents Character' Jump Action
+    private void Jump(float jumpPower, Quaternion jumpRotation)
     {
-        
+        OnJumpDetect?.Invoke();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        GetComponent<JumpIndicator>().OnIndicatorReleased += Jump;
+    }
+
+    private void OnDisable()
+    {
+        GetComponent<JumpIndicator>().OnIndicatorReleased -= Jump;
     }
 }
