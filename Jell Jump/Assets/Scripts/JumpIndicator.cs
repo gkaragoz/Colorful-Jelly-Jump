@@ -8,6 +8,9 @@ public class JumpIndicator : MonoBehaviour
     private GameObject _joystickPrefab = null;
 
     [SerializeField]
+    private GameObject _indicatorPrefab = null;
+
+    [SerializeField]
     [Tooltip("Defines minumum jump power limit")]
     private float _minJumpPower = 0;
 
@@ -30,6 +33,10 @@ public class JumpIndicator : MonoBehaviour
     [Tooltip("Defines JumpPower decrease value per IndicatorRate")]
     private float _jumpDecreaseRate = 0;
 
+    [SerializeField]
+    [Tooltip("Defines JumpIndicator rotation scale")]
+    private float _rotationScale = 0.5f;
+
     private void Start()
     {
         // Clone the PJoystick Prefab
@@ -40,12 +47,14 @@ public class JumpIndicator : MonoBehaviour
     private void OnDragged(float dragAxis)
     {
         // Rotate JumpIndicator
+        IndicatorRotator(dragAxis);
     }
 
     // When button is relased
     private void OnReleased()
     {
         // Hidden JumpIndicator
+        _indicatorPrefab.SetActive(false);
 
         // Stop JumpIndicator Action Coroutine
         StopCoroutine("IndicatorAction");
@@ -55,6 +64,7 @@ public class JumpIndicator : MonoBehaviour
     private void OnPressed()   
     {
         // Visible JumpIndicator
+        _indicatorPrefab.SetActive(true);
 
         // Start JumpIndicator Action Coroutine
         StartCoroutine("IndicatorAction");
@@ -63,7 +73,18 @@ public class JumpIndicator : MonoBehaviour
     // Indicator rotation handler
     private void IndicatorRotator(float axis)
     {
+        _indicatorPrefab.transform.rotation = new Quaternion(_indicatorPrefab.transform.rotation.x,
+         _indicatorPrefab.transform.rotation.y,
+        axis * _rotationScale,
+        _indicatorPrefab.transform.rotation.w);
+    }
 
+    // Indicator color change handler
+    private void ColorChanger(GameObject prefab)
+    {
+        Color color = Color.Lerp(Color.green, Color.red, _jumpPower / _maxJumpPower);
+
+        prefab.GetComponent<SpriteRenderer>().color = color;
     }
 
     private IEnumerator IndicatorAction()
@@ -103,6 +124,9 @@ public class JumpIndicator : MonoBehaviour
                     _jumpPower = _minJumpPower;
                 }
             }
+
+            // Change JumpIndicator Color
+            ColorChanger(_indicatorPrefab);
         }
     }
 
