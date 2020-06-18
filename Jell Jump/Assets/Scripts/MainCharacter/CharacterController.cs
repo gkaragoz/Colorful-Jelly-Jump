@@ -5,13 +5,13 @@ using System;
 public class CharacterController : MonoBehaviour
 {
     // Fires when character jump action detects
-    public Action<float, Quaternion> OnJumpDetect;
+    public Action<float, float> OnJumpDetect;
 
     // Fires when character jump action detects
     public Action<float> OnStretchDetect;
 
     // Represents Character' Jump Action
-    private void DetectJUMP(float jumpPower, Quaternion jumpRotation)
+    private void DetectJUMP(float jumpPower, float jumpRotation)
     {
         OnJumpDetect?.Invoke(jumpPower, jumpRotation);
     }

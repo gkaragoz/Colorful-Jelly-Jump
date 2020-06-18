@@ -41,8 +41,11 @@ public class JumpIndicator : MonoBehaviour
     // Defines Indicator Rotation
     private Quaternion _indicatorRotation;
 
+    // Defines Indicator Axis value
+    private float _indicatorAxis;
+
     // Fires when Jump Indicator released
-    public Action<float, Quaternion> OnIndicatorReleased;
+    public Action<float, float> OnIndicatorReleased;
 
     // Fires while Jump Indicator dragging
     public Action<float> OnIndicatorDrag;
@@ -61,6 +64,9 @@ public class JumpIndicator : MonoBehaviour
 
         // Invokes OnIndicatorDrag
         OnIndicatorDrag?.Invoke(dragAxis);
+
+        // Assings indicatorAxis
+        _indicatorAxis = dragAxis * _rotationScale;
     }
 
     // When button is relased
@@ -73,7 +79,7 @@ public class JumpIndicator : MonoBehaviour
         StopCoroutine("IndicatorAction");
 
         // Invokes OnIndicatorReleased with _jumpPower
-        OnIndicatorReleased?.Invoke(_jumpPower, _indicatorRotation);
+        OnIndicatorReleased?.Invoke(_jumpPower, _indicatorAxis);
     }
 
     // When button is pressed

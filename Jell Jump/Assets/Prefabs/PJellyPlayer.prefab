@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b895731395ff4547b9025ebd9090e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stretchMultiplier: 1
+  _jumpYMultiplier: 1
+  _jumpForceMode: 0
 --- !u!114 &278370621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 8535852527125041994, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
       propertyPath: m_Name
-      value: JellyPlayer
+      value: PJellyPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 8535852527125272020, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
