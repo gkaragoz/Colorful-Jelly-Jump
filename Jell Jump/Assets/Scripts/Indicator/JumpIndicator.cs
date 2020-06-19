@@ -109,7 +109,7 @@ public class JumpIndicator : MonoBehaviour
     // Indicator location handler
     private void IndicatorLocator(GameObject _indicatorPrefab)
     {
-        _indicatorPrefab.transform.position = new Vector3(transform.position.x, transform.position.y + .3f, 0);
+        _indicatorPrefab.transform.position = new Vector3(transform.position.x, transform.position.y + .1f, 0);
     }
 
     // Indicator color change handler

@@ -106,6 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9234c19769bc474e963cb4ca0a23262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeState: 0
-  _damageRate: 0
-  _pointMultiplier: 0
+  _cubeState: 1
+  _damageRate: 15
+  _pointsRate: 0

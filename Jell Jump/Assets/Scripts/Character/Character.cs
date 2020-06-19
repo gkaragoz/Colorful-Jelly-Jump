@@ -9,78 +9,97 @@ public class Character : MonoBehaviour
         "HealthLevel = HealthLevel + _healthIncreaseRate;")]
     private int _healthIncreaseRate = 25;
 
-    public float Health { get; private set; }
+    [SerializeField]
+    private float _health = 100;
 
-    public int JumpLevel { get; private set; }
+    [SerializeField]
+    private int _jumpLevel = 1;
 
-    public int HealthLevel { get; private set; }
+    [SerializeField]
+    private int _healthLevel = 1;
 
-    public int TotalGold { get; private set; }
+    [SerializeField]
+    private int _totalGold = 0;
 
-    public int TotalPoint { get; private set; }
+    [SerializeField]
+    private int _totalPoint = 0;
 
     // Invokes when character is dead
     public Action OnCharacterDeathState;
 
+    public float Health() { return _health; }
+
+    public int JumpLevel() { return _jumpLevel; }
+
+    public int HealthLevel() { return _healthLevel; }
+
+    public int TotalGold() { return _totalGold; }
+
+    public int TotalPoint() { return _totalPoint; }
+
     // Health Level Increaser
     public void IncreaseHealthLevel()
     {
-        HealthLevel += _healthIncreaseRate;
+        _healthLevel += _healthIncreaseRate;
     }
 
     // Jump Level Increaser
     public void IncreaseJumpLevel()
     {
-        JumpLevel++;
+        _jumpLevel++;
     }
 
     // Gold Increaser
     public void IncreaseGold(int earnedGold)
     {
-        TotalGold += earnedGold;
+        _totalGold += earnedGold;
     }
 
     // Gold Decreaser
     public void DecreaseGold(int earnedGold)
     {
-        TotalGold -= earnedGold;
+        _totalGold -= earnedGold;
     }
 
     // Health Decreaser ( Damage etc. )
     public void DecreaseHealth(float damageCount)
     {
-        Health -= damageCount;
+        _health -= damageCount;
+
+        Debug.Log("Get " + damageCount + " damage by block");
     }
 
     // Health Increaser ( Recover etc. )
     public void IncreaseHealth(float recoveryCount)
     {
-        Health += recoveryCount;
+        _health += recoveryCount;
     }
 
     // Resets point counts to zero
     public void ResetPoint()
     {
-        TotalPoint = 0;
+        _totalPoint = 0;
     }
 
     // Increases point counts
     public void IncreasePoint(int earnedPoints)
     {
-        TotalPoint += earnedPoints;
+        _totalPoint += earnedPoints;
+
+        Debug.Log("Get " + earnedPoints + " points by block");
     }
 
     // Decreases point counts
     public void DecreasePoint(int lostPoints)
     {
-        if(TotalPoint < lostPoints)
+        if(_totalPoint < lostPoints)
         {
             ResetPoint();
 
             return;
         }
 
-        TotalPoint -= lostPoints;
+        _totalPoint -= lostPoints;
     }
     
     // Character gets damage handler
@@ -99,7 +118,7 @@ public class Character : MonoBehaviour
     // Check whether character is dead or
     public bool IsCharacterDead()
     {
-        if (Health <= 0)
+        if (_health <= 0)
         {
             OnCharacterDeathState?.Invoke();
 
