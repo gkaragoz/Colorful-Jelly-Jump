@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Represents Force Mode for Character")]
-    private ForceMode _jumpForceMode;
+    private ForceMode _jumpForceMode = ForceMode.Force;
 
     // Handle character jump
     public void Jump(float jumpPower, float jumpAxis)
