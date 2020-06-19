@@ -28,10 +28,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e64281ba9b038e4b808f9706413f8b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
-  jumpLevel: 0
-  healthLevel: 0
-  totalGold: 0
+  _healthMultiplier: 10
 --- !u!114 &278370620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,12 +123,22 @@ PrefabInstance:
     - target: {fileID: 6966515267387212346, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.0498493
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 6966515267387212346, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
       propertyPath: m_Center.y
-      value: -0.024924636
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966515267387212346, guid: 85999f1bbe6b7954ea4f038fdef81a45,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966515267387212346, guid: 85999f1bbe6b7954ea4f038fdef81a45,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 7531780032754143076, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
@@ -151,7 +158,7 @@ PrefabInstance:
     - target: {fileID: 8535852527125041994, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
       propertyPath: m_Name
-      value: PJellyPlayer
+      value: JellyPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 8535852527125272020, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
@@ -211,17 +218,17 @@ PrefabInstance:
     - target: {fileID: 8535852527125272020, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.45
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8535852527125272020, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.45
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8535852527125272020, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.45
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8535852527131058636, guid: 85999f1bbe6b7954ea4f038fdef81a45, type: 3}
