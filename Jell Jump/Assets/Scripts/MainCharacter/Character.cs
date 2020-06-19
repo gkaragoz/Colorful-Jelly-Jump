@@ -5,9 +5,9 @@ using System;
 public class Character : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("Defines Health increase rate for each level-up as percentage\n" +
-        "(Health += (Health * HealthLevel *_healthMultiplier) / Health)")]
-    private float _healthMultiplier = 10f;
+    [Tooltip("Defines Health increase rate for each level-up as below formula\n" +
+        "HealthLevel = HealthLevel + _healthIncreaseRate;")]
+    private int _healthIncreaseRate = 25;
 
     public float Health { get; private set; }
 
@@ -25,10 +25,7 @@ public class Character : MonoBehaviour
     // Health Level Increaser
     public void IncreaseHealthLevel()
     {
-        HealthLevel++;
-
-        // Effect on Health
-        Health += (Health * HealthLevel * _healthMultiplier) / Health;
+        HealthLevel += _healthIncreaseRate;
     }
 
     // Jump Level Increaser
