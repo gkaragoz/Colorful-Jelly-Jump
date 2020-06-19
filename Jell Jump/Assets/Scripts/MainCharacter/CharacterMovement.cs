@@ -21,7 +21,6 @@ public class CharacterMovement : MonoBehaviour
 
         Vector3 rotation = new Vector3(-jumpAxis, _jumpYMultiplier, 0);
 
-        //TODO
         GetComponent<Rigidbody>().AddForce(rotation * jumpPower, _jumpForceMode);
     }
 
@@ -32,8 +31,8 @@ public class CharacterMovement : MonoBehaviour
         {
             GetComponent<Rigidbody>().isKinematic = true;
 
-            //TODO
-            transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, stretchAxis * _stretchMultiplier, transform.rotation.w);
+            //ISSUE
+            transform.rotation = new Quaternion(transform.localRotation.x, transform.localRotation.y, stretchAxis *_stretchMultiplier, transform.localRotation.w);
         }
 
     }

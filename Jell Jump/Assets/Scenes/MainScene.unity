@@ -178,6 +178,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 278370620, guid: fc5e8c81263f272448b0503bcca282da, type: 3}
+      propertyPath: _stretchMultiplier
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 278370622, guid: fc5e8c81263f272448b0503bcca282da, type: 3}
       propertyPath: _indicatorPrefab
       value: 
@@ -241,10 +245,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7922507843719768320, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922507843719768320, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922507843719768320, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7922507843719999390, guid: fc5e8c81263f272448b0503bcca282da,
         type: 3}
       propertyPath: m_Name
       value: JellyPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874658587582332654, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874658587582332654, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874658587582332654, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874658587582332654, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874658587582332654, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e8c81263f272448b0503bcca282da, type: 3}
