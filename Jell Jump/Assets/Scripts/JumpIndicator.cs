@@ -62,6 +62,9 @@ public class JumpIndicator : MonoBehaviour
         // Rotate JumpIndicator
         IndicatorRotator(dragAxis);
 
+        // Locate JumpIndicator
+        IndicatorLocator(_indicatorPrefab);
+
         // Invokes OnIndicatorDrag
         OnIndicatorDrag?.Invoke(dragAxis);
 
@@ -101,6 +104,12 @@ public class JumpIndicator : MonoBehaviour
         _indicatorPrefab.transform.rotation.w);
 
         _indicatorPrefab.transform.rotation = _indicatorRotation;
+    }
+
+    // Indicator location handler
+    private void IndicatorLocator(GameObject _indicatorPrefab)
+    {
+        _indicatorPrefab.transform.position = new Vector3(transform.position.x, transform.position.y + .3f, 0);
     }
 
     // Indicator color change handler
