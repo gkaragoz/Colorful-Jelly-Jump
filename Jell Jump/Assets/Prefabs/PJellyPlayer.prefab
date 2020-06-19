@@ -14,7 +14,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &278370613
 MonoBehaviour:
@@ -123,6 +123,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fd40694481cdc534ea64b928d421c46c, type: 2}
+    - target: {fileID: 6966515267387212346, guid: 85999f1bbe6b7954ea4f038fdef81a45,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.0498493
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966515267387212346, guid: 85999f1bbe6b7954ea4f038fdef81a45,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.024924636
+      objectReference: {fileID: 0}
     - target: {fileID: 7531780032754143076, guid: 85999f1bbe6b7954ea4f038fdef81a45,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
