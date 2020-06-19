@@ -178,10 +178,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 278370613, guid: fc5e8c81263f272448b0503bcca282da, type: 3}
+      propertyPath: Health
+      value: -1.92
+      objectReference: {fileID: 0}
     - target: {fileID: 278370622, guid: fc5e8c81263f272448b0503bcca282da, type: 3}
       propertyPath: _indicatorPrefab
       value: 
       objectReference: {fileID: 437651729}
+    - target: {fileID: 3903142124102060040, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Presets
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903142124102060040, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_EffectIntensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903142124102060040, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Damping
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903142124102060040, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Mass
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7922507843719768320, guid: fc5e8c81263f272448b0503bcca282da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -337,6 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 625561136}
+  - component: {fileID: 625561137}
   m_Layer: 0
   m_Name: Cinemachine
   m_TagString: Untagged
@@ -360,6 +385,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &625561137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625561135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9234c19769bc474e963cb4ca0a23262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cubeColor: {r: 1, g: 1, b: 1, a: 1}
+  _cubeState: 0
+  _damageRate: 0
+  _pointMultiplier: 0
 --- !u!1001 &662367685
 PrefabInstance:
   m_ObjectHideFlags: 0
