@@ -115,7 +115,7 @@ public class JumpIndicator : MonoBehaviour
     // Indicator color change handler
     private void ColorChanger(GameObject prefab)
     {
-        Color color = Color.Lerp(Color.green, Color.red, _jumpPower / _maxJumpPower);
+        Color color = Color.Lerp(Color.red, Color.green, _jumpPower / _maxJumpPower);
 
         prefab.GetComponent<SpriteRenderer>().color = color;
     }
