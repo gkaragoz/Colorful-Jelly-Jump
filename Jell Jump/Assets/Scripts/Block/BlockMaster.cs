@@ -15,4 +15,20 @@ public class BlockMaster : MonoBehaviour
             i++;
         }
     }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        Character character = collider.GetComponent<Character>();
+
+        if (character != null)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+
+            foreach (CubeMaster cube in GetComponentsInChildren<CubeMaster>())
+            {
+                // Invokes cube's deactive states
+                cube.EnableCollider();
+            }
+        }
+    }
 }

@@ -64,12 +64,20 @@ public class CubeMaster : MonoBehaviour
     // Disables cube' collider
     public void DisableCollider()
     {
-        _impactCount = 0;
+        GetComponent<BoxCollider>().enabled = false;
+    }
+
+    // Enables cube' collider
+    public void EnableCollider()
+    {
+        GetComponent<BoxCollider>().enabled = true;
     }
 
     // Changes Cube Color
     public void DeactiveState(Color targetColor, float duration)
     {
-        GetComponent<MeshRenderer>().material.DOColor(targetColor, duration).OnComplete(DisableCollider);
+        _impactCount = 0;
+
+        GetComponent<MeshRenderer>().material.DOColor(targetColor, duration);
     }
 }
