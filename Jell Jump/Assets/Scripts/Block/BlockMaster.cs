@@ -2,6 +2,9 @@
 
 public class BlockMaster : MonoBehaviour
 {
+    [SerializeField]
+    private Color _paleColor;
+
     // Makes all cubes to inactive
     public void MakeAllChildToInactive()
     {
@@ -10,7 +13,7 @@ public class BlockMaster : MonoBehaviour
         foreach (CubeMaster cube in GetComponentsInChildren<CubeMaster>())
         {
             // Invokes cube's deactive states
-            cube.DeactiveState(new Color(.83f, .82f, .68f), i * 0.75f);
+            cube.DeactiveState(_paleColor, i * 0.75f);
 
             i++;
         }
