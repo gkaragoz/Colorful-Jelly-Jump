@@ -18,6 +18,8 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         _character.OnCharacterDeathState += GameOver;
+
+        Screen.orientation = ScreenOrientation.Portrait;
     }
 
     private void GameOver()
