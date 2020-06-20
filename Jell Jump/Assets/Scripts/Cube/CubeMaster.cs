@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 public class CubeMaster : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class CubeMaster : MonoBehaviour
                         // Dead to character
                         character.DoDamage(character.Health());
 
-                        break;
+                        return;
                     }
 
                 case CubeState.NONEFFECTIVELY:
@@ -54,6 +55,21 @@ public class CubeMaster : MonoBehaviour
                     }
 
             }
+
+            // Makes all block's child to deactivate and color changes
+            GetComponentInParent<BlockMaster>().MakeAllChildToInactive();
         }
+    }
+
+    // Disables cube' collider
+    public void DisableCollider()
+    {
+        _impactCount = 0;
+    }
+
+    // Changes Cube Color
+    public void DeactiveState(Color targetColor, float duration)
+    {
+        GetComponent<MeshRenderer>().material.DOColor(targetColor, duration).OnComplete(DisableCollider);
     }
 }
