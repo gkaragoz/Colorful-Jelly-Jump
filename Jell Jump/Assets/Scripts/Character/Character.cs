@@ -122,6 +122,9 @@ public class Character : MonoBehaviour
         {
             OnCharacterDeathState?.Invoke();
 
+            // TEST
+            GetComponent<Rigidbody>().isKinematic = true;
+
             return true;
         }
         else

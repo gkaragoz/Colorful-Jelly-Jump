@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
+using DG.Tweening;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField]
     private Character _character;
+
+    [SerializeField]
+    private CinemachineVirtualCamera vcam ;
 
     private void Awake()
     {
@@ -15,18 +17,18 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        _character.OnCharacterDeathState += RestartLevel;
+        _character.OnCharacterDeathState += GameOver;
+    }
+
+    private void GameOver()
+    {
+        vcam.LookAt = _character.transform;
+
+        DOTween.To(FindObjectOfType<CamManager>().GET, FindObjectOfType<CamManager>().SET, 20, 1.25f).OnComplete(RestartLevel);
     }
 
     private void RestartLevel()
     {
-        StartCoroutine("StartLevelTimer");
-    }
-
-    private IEnumerator StartLevelTimer()
-    {
-        yield return new WaitForSeconds(1);
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

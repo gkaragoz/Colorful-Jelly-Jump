@@ -100,7 +100,7 @@ public class JumpIndicator : MonoBehaviour
     {
         _indicatorRotation = new Quaternion(_indicatorPrefab.transform.rotation.x,
          _indicatorPrefab.transform.rotation.y,
-        axis * _rotationScale,
+        -axis * _rotationScale,
         _indicatorPrefab.transform.rotation.w);
 
         _indicatorPrefab.transform.rotation = _indicatorRotation;

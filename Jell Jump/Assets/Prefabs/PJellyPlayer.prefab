@@ -29,6 +29,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthIncreaseRate: 25
+  _health: 100
+  _jumpLevel: 1
+  _healthLevel: 1
+  _totalGold: 0
+  _totalPoint: 0
 --- !u!114 &278370620
 MonoBehaviour:
   m_ObjectHideFlags: 0

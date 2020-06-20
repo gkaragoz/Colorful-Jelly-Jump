@@ -92,7 +92,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 0.9, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4171111833275964005
 MonoBehaviour:
@@ -108,4 +108,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cubeState: 0
   _damageRate: 0
-  _pointMultiplier: 0
+  _pointsRate: 0
+  _impactCount: 1
