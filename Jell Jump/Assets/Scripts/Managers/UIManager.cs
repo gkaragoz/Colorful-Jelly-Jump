@@ -1,14 +1,13 @@
 ﻿using TMPro;
-using UnityEngine.UI;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI _healtText;
+    private TextMeshProUGUI _healtText = null;
 
     [SerializeField]
-    private TextMeshProUGUI _pointText;
+    private TextMeshProUGUI _pointText = null;
 
     private Character _myCharacter;
 

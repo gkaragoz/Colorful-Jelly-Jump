@@ -13,13 +13,29 @@ public class CharacterController : MonoBehaviour
     // Represents Character' Jump Action
     private void DetectJUMP(float jumpPower, float jumpRotation)
     {
-        OnJumpDetect?.Invoke(jumpPower, jumpRotation);
+        if (GameManager._gameState != GameState.GAMEOVER)
+        {
+            OnJumpDetect?.Invoke(jumpPower, jumpRotation);
+        }
+
+        else
+        {
+            GetComponent<JumpIndicator>().enabled = false;
+        }
     }
 
     // Represents Character' Stretch Action
     private void DetectSTRETCH(float stretchAxis)
     {
-        OnStretchDetect?.Invoke(stretchAxis);
+        if (GameManager._gameState != GameState.GAMEOVER)
+        {
+            OnStretchDetect?.Invoke(stretchAxis);
+        }
+
+        else
+        {
+            GetComponent<JumpIndicator>().enabled = false;
+        }
     }
 
     private void OnEnable()

@@ -1,9 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class BlockMaster : MonoBehaviour
 {
     [SerializeField]
-    private Color _paleColor;
+    private Color _paleColor = Color.gray;
+
+    private void Start()
+    {
+        StartCoroutine("OnCharacterDetect");
+    }
 
     // Makes all cubes to inactive
     public void MakeAllChildToInactive()
@@ -17,20 +23,44 @@ public class BlockMaster : MonoBehaviour
 
             i++;
         }
+
+        // TODO
+        // DEACTIVATE CHARACTER DETECTION CONTROL
+        StopCoroutine("OnCharacterDetect");
     }
 
-    private void OnTriggerEnter(Collider collider)
+    // Fires when character detect
+    private IEnumerator OnCharacterDetect()
     {
-        Character character = collider.GetComponent<Character>();
+        bool shouldCheck = true;
 
-        if (character != null)
+        while (true)
         {
-            GetComponent<BoxCollider>().enabled = false;
+            yield return new WaitForSeconds(.1f);
 
-            foreach (CubeMaster cube in GetComponentsInChildren<CubeMaster>())
+            if (GameManager.Character.transform.position.y >= transform.position.y + 0.5)
             {
-                // Invokes cube's deactive states
-                cube.EnableCollider();
+                foreach (CubeMaster cube in GetComponentsInChildren<CubeMaster>())
+                {
+                    // Invokes cube's deactive states
+                    cube.EnableCollider();
+                }
+
+                shouldCheck = true;
+            }
+
+            else if(GameManager.Character.transform.position.y <= transform.position.y - 0.5)
+            {
+                if (shouldCheck)
+                {
+                    foreach (CubeMaster cube in GetComponentsInChildren<CubeMaster>())
+                    {
+                        // Invokes cube's deactive states
+                        cube.DisableCollider();
+
+                        shouldCheck = false;
+                    }
+                }
             }
         }
     }

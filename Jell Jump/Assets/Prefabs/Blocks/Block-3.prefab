@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4246369078388952687}
   - component: {fileID: 2003996859081362320}
-  - component: {fileID: 6843967137842262028}
   m_Layer: 0
   m_Name: Block-3
   m_TagString: Untagged
@@ -49,19 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _paleColor: {r: 0.83137256, g: 0.83137256, b: 0.83137256, a: 0}
---- !u!65 &6843967137842262028
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525935280161082074}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6073464, y: 0.19999996, z: 1}
-  m_Center: {x: -0.3963279, y: 0.65, z: 0}
 --- !u!1001 &3444174040009503301
 PrefabInstance:
   m_ObjectHideFlags: 0

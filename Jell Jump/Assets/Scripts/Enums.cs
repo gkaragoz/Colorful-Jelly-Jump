@@ -6,3 +6,9 @@ public enum CubeState
     NONEFFECTIVELY,     // No effect on Character
     USEFULLY    // Earns golds, health, points etc.
 }
+
+public enum GameState
+{
+    GAMEOVER,
+    ONPLAY
+}

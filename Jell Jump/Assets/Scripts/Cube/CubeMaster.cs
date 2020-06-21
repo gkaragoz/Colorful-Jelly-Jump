@@ -4,13 +4,13 @@ using DG.Tweening;
 public class CubeMaster : MonoBehaviour
 {
     [SerializeField]
-    private CubeState _cubeState;
+    private CubeState _cubeState = CubeState.NONEFFECTIVELY;
 
     [SerializeField]
-    private int _damageRate;
+    private int _damageRate = 0;
 
     [SerializeField]
-    private int _pointsRate;
+    private int _pointsRate =0;
 
     [SerializeField]
     private int _impactCount = 1;

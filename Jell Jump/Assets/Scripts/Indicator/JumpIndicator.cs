@@ -63,7 +63,7 @@ public class JumpIndicator : MonoBehaviour
         IndicatorRotator(dragAxis);
 
         // Locate JumpIndicator
-        IndicatorLocator(_indicatorPrefab);
+        IndicatorLocator();
 
         // Invokes OnIndicatorDrag
         OnIndicatorDrag?.Invoke(dragAxis);
@@ -107,7 +107,7 @@ public class JumpIndicator : MonoBehaviour
     }
 
     // Indicator location handler
-    private void IndicatorLocator(GameObject _indicatorPrefab)
+    public void IndicatorLocator()
     {
         _indicatorPrefab.transform.position = new Vector3(transform.position.x, transform.position.y + .1f, 0);
     }
