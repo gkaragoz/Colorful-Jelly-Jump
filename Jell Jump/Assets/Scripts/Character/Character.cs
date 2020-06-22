@@ -21,10 +21,8 @@ public class Character : MonoBehaviour
     [SerializeField]
     private int _healthLevel = 1;
 
-    [SerializeField]
     private int _totalGold = 0;
 
-    [SerializeField]
     private int _totalPoint = 0;
 
     [SerializeField]
@@ -168,6 +166,14 @@ public class Character : MonoBehaviour
         _jumpRate = ((_feverJumpLevelRate * _feverJumpLevel * _feverJumpDefaultRate) / 100) + _feverJumpDefaultRate;
 
         GetComponent<CharacterMovement>().Jump(_jumpRate);
+    }
+
+    // Calculates jump power via jumpLevel and jumpLevelRate
+    public float CalculateJumpPower(float jPower)
+    {
+        float calculatedPower = ((_jumpLevelRate * _jumpLevel * jPower) / 100) + jPower;
+
+        return calculatedPower;
     }
 
     private void OnEnable()
