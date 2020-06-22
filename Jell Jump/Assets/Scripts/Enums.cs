@@ -20,3 +20,10 @@ public enum BlockState
     STONED,
     FRAGILE
 }
+
+public enum CameraState
+{
+    ONNORMAL,
+    ONGAMEOVER,
+    ONFOCUS
+}
