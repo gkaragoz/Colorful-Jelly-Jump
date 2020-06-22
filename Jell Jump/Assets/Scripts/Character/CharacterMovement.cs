@@ -63,11 +63,17 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        _isLanded = true;
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            _isLanded = true;
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        _isLanded = false;
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            _isLanded = false;
+        }
     }
 }
