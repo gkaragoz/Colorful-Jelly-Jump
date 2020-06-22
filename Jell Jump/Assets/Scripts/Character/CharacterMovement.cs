@@ -20,15 +20,12 @@ public class CharacterMovement : MonoBehaviour
     // Handle character jump
     public void Jump(float jumpPower, float jumpAxis)
     {
-        Debug.Log(jumpPower);
-
         GetComponent<Rigidbody>().freezeRotation = false;
 
         float power = GetComponent<Character>().CalculateJumpPower(jumpPower);
 
         if (_isLanded)
         {
-            Debug.Log(power);
             Vector3 rotation = new Vector3(jumpAxis, _jumpYMultiplier, 0);
 
             GetComponent<Rigidbody>().AddForce(rotation * power, _jumpForceMode);
