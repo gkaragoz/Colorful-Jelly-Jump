@@ -20,7 +20,7 @@ public class CameraManager : MonoBehaviour
     private float _defaultFowDistance = 0;
 
     [SerializeField]
-    private CinemachineVirtualCamera vcam;
+    private CinemachineVirtualCamera vcam = null;
 
     private void Awake()
     {
