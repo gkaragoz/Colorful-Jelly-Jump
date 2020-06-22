@@ -56,14 +56,18 @@ public class JumpIndicator : MonoBehaviour
         Instantiate(_joystickPrefab);
     }
 
+    // WORST - CASE
+    private void Update()
+    {
+        // Locate JumpIndicator
+        IndicatorLocator();
+    }
+
     // While button is holding
     private void OnDragged(float dragAxis)
     {
         // Rotate JumpIndicator
         IndicatorRotator(dragAxis);
-
-        // Locate JumpIndicator
-        IndicatorLocator();
 
         // Invokes OnIndicatorDrag
         OnIndicatorDrag?.Invoke(dragAxis);
