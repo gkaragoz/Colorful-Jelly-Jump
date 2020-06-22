@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5686275, g: 0.93333334, b: 0.011764706, a: 0.54509807}
+      maxColor: {r: 0.41960785, g: 0.93333334, b: 0.011764706, a: 0.6509804}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4828,6 +4828,36 @@ MonoBehaviour:
   m_ParticleSystem: {fileID: 4459577330510990519}
   m_HeightOffset: 0.0001
   m_RotationOffset: {x: 0, y: 0, z: 0}
+--- !u!1 &8004406938360829033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4610182439067136460}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4610182439067136460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8004406938360829033}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.95707846, y: 2.4241946, z: -4.709779}
+  m_LocalScale: {x: 3.333333, y: 3.333333, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 8535852527125272020}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8535852527125041994
 GameObject:
   m_ObjectHideFlags: 0
@@ -4840,8 +4870,12 @@ GameObject:
   - component: {fileID: 3498494583281280628}
   - component: {fileID: 5183902484459819416}
   - component: {fileID: 6966515267387212346}
-  - component: {fileID: 8535852527131058636}
   - component: {fileID: 3291473113596966108}
+  - component: {fileID: 1569175252}
+  - component: {fileID: 278370613}
+  - component: {fileID: 278370620}
+  - component: {fileID: 278370621}
+  - component: {fileID: 278370622}
   m_Layer: 0
   m_Name: CubeBase
   m_TagString: Player
@@ -4856,12 +4890,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8535852527125041994}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0.5, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 5604298401489407377}
   - {fileID: 4597004826411170374}
+  - {fileID: 4610182439067136460}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4891,7 +4926,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54c7b62bf04fb6841be0d4faad81c089, type: 2}
+  - {fileID: 2100000, guid: fd40694481cdc534ea64b928d421c46c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4923,62 +4958,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1.05, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8535852527131058636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8535852527125041994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ced0f19ea634ed541a6b447a3c03c517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CanControl: 1
-  m_PushCubeType: 2
-  m_CanShake: 1
-  m_CanBePushed: 1
-  m_MoveType: 0
-  m_MoveSpeed: 0.15
-  m_LastMove: {x: 0, y: 0, z: 0}
-  m_LastInputDirection: {x: 0, y: 0, z: 0}
-  m_OnMoveStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8795229954401439304}
-        m_MethodName: Emit
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8535852527131058636}
-          m_ObjectArgumentAssemblyTypeName: JellyCube.CubeController, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnMoveEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnMoveByImpactSuccess:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7360741816360253545}
-        m_MethodName: Emit
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8535852527131058636}
-          m_ObjectArgumentAssemblyTypeName: JellyCube.CubeController, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnMoveByImpactFail:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3291473113596966108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4992,11 +4973,95 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Presets: 0
-  m_EffectIntensity: 0.5
+  m_EffectIntensity: 0.4
   m_Damping: 0.85
   m_Mass: 2
-  m_Stiffness: 0.6
+  m_Stiffness: 0.5
   sleeping: 0
+--- !u!54 &1569175252
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535852527125041994}
+  serializedVersion: 2
+  m_Mass: 0.5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 8
+  m_CollisionDetection: 0
+--- !u!114 &278370613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535852527125041994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e64281ba9b038e4b808f9706413f8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthIncreaseRate: 25
+  _health: 100
+  _jumpLevel: 1
+  _healthLevel: 1
+  _totalGold: 0
+  _totalPoint: 0
+--- !u!114 &278370620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535852527125041994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b895731395ff4547b9025ebd9090e9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stretchMultiplier: 0.1
+  _jumpYMultiplier: 1
+  _jumpForceMode: 0
+  _isLanded: 1
+--- !u!114 &278370621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535852527125041994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4a66e58cb1bbe48a0e40577b08c905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &278370622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535852527125041994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68e44201da92d44294e936c9ed824fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _joystickPrefab: {fileID: 452008254072787855, guid: a9ac84814323ffa44a21b13739b9c7eb,
+    type: 3}
+  _indicatorPrefab: {fileID: 0}
+  _minJumpPower: 50
+  _maxJumpPower: 300
+  _indicatorRate: 0.04
+  _jumpPower: 0
+  _jumpIncreaseRate: 10
+  _jumpDecreaseRate: 10
+  _rotationScale: 0.3
 --- !u!1 &8682718268728863251
 GameObject:
   m_ObjectHideFlags: 0
@@ -5220,7 +5285,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5686275, g: 0.93333334, b: 0.011764706, a: 0.54509807}
+      maxColor: {r: 0.41599113, g: 0.93333334, b: 0.011764677, a: 0.65882355}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

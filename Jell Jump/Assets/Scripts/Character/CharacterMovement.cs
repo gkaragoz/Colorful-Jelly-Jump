@@ -28,7 +28,7 @@ public class CharacterMovement : MonoBehaviour
     // Handle character jump
     public void Jump(float jumpPower, float jumpAxis)
     {
-        //GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Rigidbody>().freezeRotation = false;
 
         if (_isLanded)
         {
@@ -43,7 +43,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (_isLanded)
         {
-            //GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Rigidbody>().freezeRotation = true;
 
             //ISSUE
             transform.rotation = new Quaternion(transform.localRotation.x, 
