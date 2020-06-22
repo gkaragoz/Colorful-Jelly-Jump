@@ -11,41 +11,73 @@ public class CameraManager : MonoBehaviour
     private float _fowAnimationDuration = 1.25f;
 
     [SerializeField]
+    private float _targetFocusDistance = 30;
+
+    [SerializeField]
+    private float _focusAnimationDuration = .75f;
+
+    // Stores camera fow distance value
+    private float _defaultFowDistance = 0;
+
+    [SerializeField]
     private CinemachineVirtualCamera vcam;
+
+    private void Awake()
+    {
+        // Assing current fow distance of vcam
+        _defaultFowDistance = vcam.m_Lens.FieldOfView;
+    }
 
     public void SET(float value)
     {
-        FindObjectOfType<CinemachineVirtualCamera>().m_Lens.FieldOfView = value;
+        vcam.m_Lens.FieldOfView = value;
     }
 
     public float GET()
     {
-        return FindObjectOfType<CinemachineVirtualCamera>().m_Lens.FieldOfView;
+        return vcam.m_Lens.FieldOfView;
     }
 
     // Handles camera states transition
-    public void CameraAction(CameraState currentState, TweenCallback OnComplete)
+    public void CameraAction(CameraAnimationState state, TweenCallback OnComplete)
     {
-        switch (currentState)
+        switch (state)
         {
-            case CameraState.ONNORMAL: // Normal Mode Gameplay Camera Actions
-                {
-                    return;
-                }
-
-            case CameraState.ONFOCUS: // OnFocus Mode Camera Actions
-                {
-                    return;
-                }
-
-            case CameraState.ONGAMEOVER: // GameOver Mode Camera Actions
+            case CameraAnimationState.ANIM_GAMEOVER:
                 {
                     vcam.LookAt = GameManager.Character.transform;
 
-                    DOTween.To(GET, SET, _targetFowDistanceOnGameOver, 1.25f).OnComplete(OnComplete);
+                    DOTween.To(GET, SET, _targetFowDistanceOnGameOver, _fowAnimationDuration).OnComplete(() =>
+                    {
+                        // Invokes Tween Complete Callback
+                        OnComplete?.Invoke();
+                    });
 
                     return;
                 }
+
+            case CameraAnimationState.ANIM_FOCUS:
+                {
+                    DOTween.To(GET, SET, _targetFocusDistance, _focusAnimationDuration).OnComplete(() =>
+                    {
+                        // Invokes Tween Complete Callback
+                        OnComplete?.Invoke();
+                    });
+
+                    return;
+                }
+
+            case CameraAnimationState.ANIM_REVERSEFOCUS:
+                {
+                    DOTween.To(GET, SET, _defaultFowDistance, _focusAnimationDuration).OnComplete(() =>
+                    {
+                        // Invokes Tween Complete Callback
+                        OnComplete?.Invoke();
+                    });
+
+                    return;
+                }
+
         }
     }
 }
