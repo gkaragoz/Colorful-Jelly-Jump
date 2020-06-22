@@ -16,6 +16,9 @@ public class Character : MonoBehaviour
     private int _jumpLevel = 1;
 
     [SerializeField]
+    private int _jumpLevelRate = 10;
+
+    [SerializeField]
     private int _healthLevel = 1;
 
     [SerializeField]
@@ -23,6 +26,15 @@ public class Character : MonoBehaviour
 
     [SerializeField]
     private int _totalPoint = 0;
+
+    [SerializeField]
+    private int _feverJumpLevelRate = 10;
+
+    [SerializeField]
+    private int _feverJumpLevel = 1;
+
+    [SerializeField]
+    private int _feverJumpRate = 200;
 
     // Invokes when character is dead
     public Action OnCharacterDeathState;
@@ -142,6 +154,16 @@ public class Character : MonoBehaviour
         }
         else
             return false;
+    }
+
+    // Character's FeverJump Ability
+    public void FeverJump()
+    {
+        int _jumpRate = 0;
+
+        _jumpRate = ((_feverJumpLevelRate * _feverJumpLevel * _feverJumpRate) / 100) + _feverJumpRate;
+
+        GetComponent<CharacterMovement>().Jump(_jumpRate);
     }
 
     private void OnEnable()

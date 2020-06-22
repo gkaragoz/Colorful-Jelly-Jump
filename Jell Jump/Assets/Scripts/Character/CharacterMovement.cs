@@ -30,6 +30,16 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    // Handle character Fever jump
+    public void Jump(float jumpPower)
+    {
+        GetComponent<Rigidbody>().freezeRotation = false;
+
+        Vector3 rotation = new Vector3(0, _jumpYMultiplier, 0);
+
+        GetComponent<Rigidbody>().AddForce(rotation * jumpPower, _jumpForceMode);
+    }
+
     // Handle character stretch
     public void Stretch(float stretchAxis)
     {

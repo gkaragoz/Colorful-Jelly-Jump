@@ -54,6 +54,16 @@ public class CubeMaster : MonoBehaviour
                         break;
                     }
 
+                case CubeState.NICELY:
+                    {
+                        // Give Points to character
+                        character.IncreasePoint(_pointsRate);
+
+                        character.FeverJump();
+
+                        break;
+                    }
+
             }
 
             // Makes all block's child to deactivate and color changes

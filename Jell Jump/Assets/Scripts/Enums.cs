@@ -4,7 +4,8 @@ public enum CubeState
     DEADLY,     // Cause character' death
     DANGEROUSLY,    // Cause damage
     NONEFFECTIVELY,     // No effect on Character
-    USEFULLY    // Earns golds, health, points etc.
+    USEFULLY,    // Earns golds, health, points etc.
+    NICELY      // FEVERRRRRR
 }
 
 public enum GameState

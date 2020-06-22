@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9234c19769bc474e963cb4ca0a23262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeState: 3
+  _cubeState: 4
   _damageRate: 0
   _pointsRate: 3
   _impactCount: 1
