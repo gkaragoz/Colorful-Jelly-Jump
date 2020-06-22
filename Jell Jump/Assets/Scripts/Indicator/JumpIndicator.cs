@@ -87,6 +87,9 @@ public class JumpIndicator : MonoBehaviour
 
         // Invokes OnIndicatorReleased with _jumpPower
         OnIndicatorReleased?.Invoke(_jumpPower, _indicatorAxis);
+
+        // CameraFocus Animation Reverse
+        FindObjectOfType<CameraManager>().CameraAction(CameraAnimationState.ANIM_REVERSEFOCUS, null);
     }
 
     // When button is pressed
@@ -97,6 +100,9 @@ public class JumpIndicator : MonoBehaviour
 
         // Start JumpIndicator Action Coroutine
         StartCoroutine("IndicatorAction");
+
+        // CameraFocus Animation Forward
+        FindObjectOfType<CameraManager>().CameraAction(CameraAnimationState.ANIM_FOCUS, null);
     }
 
     // Indicator rotation handler

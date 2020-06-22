@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         // Set GameState to GameOver
         _gameState = GameState.GAMEOVER;
 
-        GetComponent<CameraManager>().CameraAction(CameraState.ONGAMEOVER, OnComplete);
+        GetComponent<CameraManager>().CameraAction(CameraAnimationState.ANIM_GAMEOVER, OnComplete);
     }
 
     private void OnComplete()

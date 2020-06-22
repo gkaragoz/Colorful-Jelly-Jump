@@ -640,6 +640,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: JellyPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 8874658587582332654, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874658587582332654, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874658587582332654, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e8c81263f272448b0503bcca282da, type: 3}
 --- !u!1 &625561135
@@ -2563,6 +2578,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetFowDistanceOnGameOver: 20
+  _fowAnimationDuration: 1
+  _targetFocusDistance: 45
+  _focusAnimationDuration: 0.25
+  vcam: {fileID: 1295158989}
 --- !u!1 &2100240781
 GameObject:
   m_ObjectHideFlags: 0

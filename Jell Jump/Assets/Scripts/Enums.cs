@@ -21,9 +21,9 @@ public enum BlockState
     FRAGILE
 }
 
-public enum CameraState
+public enum CameraAnimationState
 {
-    ONNORMAL,
-    ONGAMEOVER,
-    ONFOCUS
+    ANIM_REVERSEFOCUS,
+    ANIM_FOCUS,
+    ANIM_GAMEOVER
 }
