@@ -13,3 +13,10 @@ public enum GameState
     GAMEOVER,
     ONPLAY
 }
+
+public enum BlockState
+{
+    NORMAL,
+    STONED,
+    FRAGILE
+}

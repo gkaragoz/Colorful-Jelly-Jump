@@ -10,7 +10,7 @@ public class CubeMaster : MonoBehaviour
     private int _damageRate = 0;
 
     [SerializeField]
-    private int _pointsRate =0;
+    private int _pointsRate = 0;
 
     [SerializeField]
     private int _impactCount = 1;
@@ -89,5 +89,11 @@ public class CubeMaster : MonoBehaviour
         _impactCount = 0;
 
         GetComponent<MeshRenderer>().material.DOColor(targetColor, duration);
+    }
+
+    // Makes Cube Interaction to None
+    public void MakeCubeNonInteractable()
+    {
+        _impactCount = 0;
     }
 }

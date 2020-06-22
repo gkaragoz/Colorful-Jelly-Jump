@@ -6,6 +6,9 @@ public class BlockMaster : MonoBehaviour
     [SerializeField]
     private Color _paleColor = Color.gray;
 
+    [SerializeField]
+    private BlockState _blockState = BlockState.NORMAL;
+
     private void Start()
     {
         StartCoroutine("OnCharacterDetect");
@@ -18,15 +21,37 @@ public class BlockMaster : MonoBehaviour
 
         foreach (CubeMaster cube in GetComponentsInChildren<CubeMaster>())
         {
-            // Invokes cube's deactive states
-            cube.DeactiveState(_paleColor, i * 0.75f);
+            switch (_blockState)
+            {
+                case BlockState.NORMAL:
+                    {
+                        // Makes cube interaction to none
+                        cube.MakeCubeNonInteractable();
 
+                        break;
+                    }
+
+                case BlockState.STONED:
+                    {
+                        // Invokes cube's deactive states
+                        cube.DeactiveState(_paleColor, i * 0.75f);
+
+                        // DEACTIVATE CHARACTER DETECTION CONTROL
+                        StopCoroutine("OnCharacterDetect");
+
+                        break;
+                    }
+
+                case BlockState.FRAGILE:
+                    {
+                        // TODO
+
+                        break;
+                    }
+            }
+            
             i++;
         }
-
-        // TODO
-        // DEACTIVATE CHARACTER DETECTION CONTROL
-        StopCoroutine("OnCharacterDetect");
     }
 
     // Fires when character detect
