@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using Cinemachine;
-using DG.Tweening;
+using System;
 
+[RequireComponent(typeof(CameraManager), (typeof(LevelManager)), typeof(UIManager))]
 public class GameManager : MonoBehaviour
 {
     public static GameState _gameState = GameState.ONPLAY;
 
     public static Character Character { get; private set; }
-
-    [SerializeField]
-    private CinemachineVirtualCamera vcam = null;
 
     private void Awake()
     {
@@ -29,9 +27,28 @@ public class GameManager : MonoBehaviour
         // Set GameState to GameOver
         _gameState = GameState.GAMEOVER;
 
-        vcam.LookAt = Character.transform;
+        GetComponent<CameraManager>().CameraAction(CameraState.ONGAMEOVER, OnComplete);
+    }
 
-        DOTween.To(FindObjectOfType<CamManager>().GET, FindObjectOfType<CamManager>().SET, 20, 1.25f).OnComplete(RestartLevel);
+    private void OnComplete()
+    {
+        switch (_gameState)
+        {
+            case GameState.GAMEOVER:
+                {
+                    RestartLevel();
+
+                    break;
+                }
+
+            case GameState.ONPLAY:
+                {
+                    // TODO
+
+                    break;
+                }
+
+        }
     }
 
     private void RestartLevel()
@@ -39,6 +56,6 @@ public class GameManager : MonoBehaviour
         // Set GameState to ONPLAY
         _gameState = GameState.ONPLAY;
 
-        LevelManager.RestartLevel();
+        GetComponent<LevelManager>().RestartLevel();
     }
 }

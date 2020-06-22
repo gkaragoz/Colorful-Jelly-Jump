@@ -2487,9 +2487,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2085078262}
-  - component: {fileID: 2085078261}
-  - component: {fileID: 2085078263}
+  - component: {fileID: 2085078265}
   - component: {fileID: 2085078264}
+  - component: {fileID: 2085078263}
+  - component: {fileID: 2085078261}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2509,7 +2510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e0fb955ae1ba8408c7eacfe700c988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vcam: {fileID: 1295158989}
 --- !u!4 &2085078262
 Transform:
   m_ObjectHideFlags: 0
@@ -2547,9 +2547,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2085078260}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77704bda072e604793fa04d56bcf47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2085078265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085078260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e7fa07ddcaadb34e9e4331be91c9558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetFowDistanceOnGameOver: 20
 --- !u!1 &2100240781
 GameObject:
   m_ObjectHideFlags: 0
