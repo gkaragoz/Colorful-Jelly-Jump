@@ -36,7 +36,7 @@ public class CubeMaster : MonoBehaviour
                 case CubeState.DEADLY:
                     {
                         // Dead to character
-                        character.DoDamage(character.Health());
+                        character.DeadCharacter();
 
                         return;
                     }

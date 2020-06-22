@@ -115,6 +115,19 @@ public class Character : MonoBehaviour
         IsCharacterDead();
     }
 
+    // Causes character death
+    public void DeadCharacter()
+    {
+        Debug.Log("Get " + _health + " damage by block");
+
+        _health = 0;
+
+        OnCharacterDeathState?.Invoke();
+
+        // TEST
+        GetComponent<Rigidbody>().isKinematic = true;
+    }
+
     // Check whether character is dead or
     public bool IsCharacterDead()
     {

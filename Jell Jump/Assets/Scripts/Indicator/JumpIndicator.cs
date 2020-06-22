@@ -75,8 +75,8 @@ public class JumpIndicator : MonoBehaviour
     // When button is relased
     private void OnReleased()
     {
-        // Hidden JumpIndicator
-        _indicatorPrefab.SetActive(false);
+        // Hide JumpIndicator
+        HideIndicator();
 
         // Stop JumpIndicator Action Coroutine
         StopCoroutine("IndicatorAction");
@@ -89,7 +89,7 @@ public class JumpIndicator : MonoBehaviour
     private void OnPressed()   
     {
         // Visible JumpIndicator
-        _indicatorPrefab.SetActive(true);
+        ShowIndicator();
 
         // Start JumpIndicator Action Coroutine
         StartCoroutine("IndicatorAction");
@@ -165,6 +165,20 @@ public class JumpIndicator : MonoBehaviour
             // Update JumpIndicator Color
             ColorChanger(_indicatorPrefab);
         }
+    }
+
+    // Makes visible to indicator
+    public void ShowIndicator()
+    {
+        // Visible JumpIndicator
+        _indicatorPrefab.SetActive(true);
+    }
+
+    // Makes hide to indicator
+    public void HideIndicator()
+    {
+        // Hidden JumpIndicator
+        _indicatorPrefab.SetActive(false);
     }
 
     private void OnEnable()

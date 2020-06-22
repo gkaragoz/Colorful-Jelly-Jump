@@ -2,14 +2,6 @@
 
 public class CharacterMovement : MonoBehaviour
 {
-    public static CharacterMovement instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-    }
-
     [SerializeField]
     [Tooltip("Increase value for more stretching")]
     private float _stretchMultiplier = .25f;
@@ -23,7 +15,7 @@ public class CharacterMovement : MonoBehaviour
     private ForceMode _jumpForceMode = ForceMode.Force;
 
     [SerializeField]
-    private bool _isLanded = true;
+    public static bool _isLanded = true;
 
     // Handle character jump
     public void Jump(float jumpPower, float jumpAxis)
