@@ -76,9 +76,16 @@ public class Character : MonoBehaviour
     // Health Decreaser ( Damage etc. )
     public void DecreaseHealth(float damageCount)
     {
-        _health -= damageCount;
-
         Debug.Log("Get " + damageCount + " damage by block");
+
+        if (damageCount > _health)
+        {
+            _health = 0;
+
+            return;
+        }
+
+        _health -= damageCount;
     }
 
     // Health Increaser ( Recover etc. )
@@ -117,11 +124,8 @@ public class Character : MonoBehaviour
     // Character gets damage handler
     public void DoDamage(float damageCount)
     {
-        // TODO
         // Decrease Health
         DecreaseHealth(damageCount);
-
-        // Re-size cube scale
 
         // Control Death State
         IsCharacterDead();
