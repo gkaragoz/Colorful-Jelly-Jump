@@ -67,7 +67,7 @@ public class CubeMaster : MonoBehaviour
             }
 
             // Makes all block's child to deactivate and color changes
-            GetComponentInParent<BlockMaster>().MakeAllChildToInactive();
+            GetComponentInParent<BlockMaster>().InitalizeBlockAction();
         }
     }
 

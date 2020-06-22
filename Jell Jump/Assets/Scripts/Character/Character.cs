@@ -34,7 +34,7 @@ public class Character : MonoBehaviour
     private int _feverJumpLevel = 1;
 
     [SerializeField]
-    private int _feverJumpRate = 200;
+    private int _feverJumpDefaultRate = 200;
 
     // Invokes when character is dead
     public Action OnCharacterDeathState;
@@ -161,7 +161,7 @@ public class Character : MonoBehaviour
     {
         int _jumpRate = 0;
 
-        _jumpRate = ((_feverJumpLevelRate * _feverJumpLevel * _feverJumpRate) / 100) + _feverJumpRate;
+        _jumpRate = ((_feverJumpLevelRate * _feverJumpLevel * _feverJumpDefaultRate) / 100) + _feverJumpDefaultRate;
 
         GetComponent<CharacterMovement>().Jump(_jumpRate);
     }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 
 public class BlockMaster : MonoBehaviour
 {
@@ -9,17 +10,26 @@ public class BlockMaster : MonoBehaviour
     [SerializeField]
     private BlockState _blockState = BlockState.NORMAL;
 
+    [SerializeField]
+    private float _fragileBlockScaleDuration = 1f;
+
+    [SerializeField]
+    private float _fragileBlockWaitDuration = 1f;
+
     private void Start()
     {
         StartCoroutine("OnCharacterDetect");
     }
 
     // Makes all cubes to inactive
-    public void MakeAllChildToInactive()
+    public void InitalizeBlockAction()
     {
         int i = 1;
 
-        foreach (CubeMaster cube in GetComponentsInChildren<CubeMaster>())
+        // CubeList in the block
+        CubeMaster[] cubeMasters = GetComponentsInChildren<CubeMaster>();
+
+        foreach (CubeMaster cube in cubeMasters)
         {
             switch (_blockState)
             {
@@ -36,20 +46,30 @@ public class BlockMaster : MonoBehaviour
                         // Invokes cube's deactive states
                         cube.DeactiveState(_paleColor, i * 0.75f);
 
-                        // DEACTIVATE CHARACTER DETECTION CONTROL
-                        StopCoroutine("OnCharacterDetect");
+                        if (i == cubeMasters.Length)
+                        {
+                            // DEACTIVATE CHARACTER DETECTION CONTROL
+                            StopCoroutine("OnCharacterDetect");
+                        }
 
                         break;
                     }
 
                 case BlockState.FRAGILE:
                     {
-                        // TODO
+                        // Invokes cube's deactive states
+                        cube.DeactiveState(_paleColor, i * 0.75f);
+
+                        if(i == cubeMasters.Length)
+                        {
+                            StartCoroutine("OnFragileBlock");
+                        }
 
                         break;
                     }
+
             }
-            
+
             i++;
         }
     }
@@ -74,7 +94,7 @@ public class BlockMaster : MonoBehaviour
                 shouldCheck = true;
             }
 
-            else if(GameManager.Character.transform.position.y <= transform.position.y - 0.35)
+            else if (GameManager.Character.transform.position.y <= transform.position.y - 0.35)
             {
                 if (shouldCheck)
                 {
@@ -88,5 +108,29 @@ public class BlockMaster : MonoBehaviour
                 }
             }
         }
+    }
+
+    // Fires when fragile block actives
+    private IEnumerator OnFragileBlock()
+    {
+        // DEACTIVATE CHARACTER DETECTION CONTROL
+        StopCoroutine("OnCharacterDetect");
+
+        yield return new WaitForSeconds(_fragileBlockWaitDuration);
+
+        // Fragile Blocks
+        transform.DOScale(0, _fragileBlockScaleDuration).OnComplete(DeactivateBlock);
+    }
+
+    // Activates blocks
+    public void ActivateBlock()
+    {
+        enabled = true;
+    }
+
+    // Deactivates blocks
+    public void DeactivateBlock()
+    {
+        enabled = false;
     }
 }
