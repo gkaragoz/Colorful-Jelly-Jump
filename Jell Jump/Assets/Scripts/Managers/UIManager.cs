@@ -17,7 +17,10 @@ public class UIManager : MonoBehaviour
     #endregion
 
     [SerializeField]
-    private TextMeshProUGUI _pointText = null;
+    private TextMeshProUGUI _levelScoreText = null;
+
+    [SerializeField]
+    private TextMeshProUGUI _totalScoreText = null;
 
     // Stores UI's current state
     private UIState _state = UIState.UI_STARTGAME;
@@ -34,11 +37,11 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTotalScore(int currentTotalScore)
     {
-        // TODO
+        _totalScoreText.text = currentTotalScore.ToString();
     }
 
     public void UpdateLevelScore(int currentScore)
     {
-        // TODO
+        _levelScoreText.text = currentScore.ToString();
     }
 }

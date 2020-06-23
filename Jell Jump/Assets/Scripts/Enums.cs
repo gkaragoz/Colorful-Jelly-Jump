@@ -32,6 +32,6 @@ public enum CameraAnimationState
 public enum UIState
 {
     UI_INGAME,
-    UI_ENDGAME,
+    UI_RESTARTGAME,
     UI_STARTGAME
 }

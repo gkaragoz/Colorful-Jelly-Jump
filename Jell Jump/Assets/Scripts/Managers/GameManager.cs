@@ -48,6 +48,15 @@ public class GameManager : MonoBehaviour
         // Play the camera zoom animation
         GetComponent<CameraManager>().CameraAction(CameraAnimationState.ANIM_CLOSEFOCUS, OnComplete);
 
+        // Reward To Character
+
+        // AS POINTS
+        MyCharacter.IncreaseTotalPoint();
+
+        // AS GOLD
+        MyCharacter.CalculateGoldReward(LevelManager.instance.CurrentLevelIndex,
+            LevelManager.instance.CurrentLevelTier);
+
         // Show popup
         // TODO
 

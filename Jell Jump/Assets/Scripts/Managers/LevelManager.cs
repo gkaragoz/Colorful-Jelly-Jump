@@ -20,6 +20,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject _endPointPrefab = null;
 
+    public int CurrentLevelTier = 1;
+
+    public int CurrentLevelIndex = 1;
+
     public float CurrentRemainingDistance { get; private set; }
 
     private void Start()
@@ -55,10 +59,15 @@ public class LevelManager : MonoBehaviour
         StopCoroutine("LevelStatusController");
 
         Debug.Log("LEVEL FINISHED...");
+
+        // TODO
+
+        // Load new Level
     }
 
     public static void LoadNewLevel()
     {
         // TODO
+        
     }
 }

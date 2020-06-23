@@ -25,6 +25,8 @@ public class Character : MonoBehaviour
 
     private int _totalPoint = 0;
 
+    private int _levelPoint = 0;
+
     [SerializeField]
     private int _feverJumpLevelRate = 10;
 
@@ -58,6 +60,15 @@ public class Character : MonoBehaviour
     {
         _jumpLevel++;
     }
+    
+    // Calculates gold rewards
+    public void CalculateGoldReward(int levelIndex, int levelTier)
+    {
+        int reward = levelIndex * levelTier * _levelPoint;
+
+        // Update Gold with reward
+        IncreaseGold(reward);
+    }
 
     // Gold Increaser
     public void IncreaseGold(int earnedGold)
@@ -69,9 +80,9 @@ public class Character : MonoBehaviour
     }
 
     // Gold Decreaser
-    public void DecreaseGold(int earnedGold)
+    public void DecreaseGold(int lostGold)
     {
-        _totalGold -= earnedGold;
+        _totalGold -= lostGold;
 
         // TODO
         // Update Gold on UI
@@ -104,42 +115,53 @@ public class Character : MonoBehaviour
         // Update Health on UI
     }
 
-    // Resets point counts to zero
-    public void ResetPoint()
+    // Increases point counts
+    public void IncreaseTotalPoint()
     {
-        _totalPoint = 0;
+        _totalPoint += _levelPoint;
 
         // TODO
         // Update Point on UI
+        UIManager.instance.UpdateTotalScore(_totalPoint);
     }
 
-    // Increases point counts
-    public void IncreasePoint(int earnedPoints)
+    // Resets level point counts to zero
+    public void ResetLevelPoint()
     {
-        _totalPoint += earnedPoints;
+        _levelPoint = 0;
+
+        // Update LevelPoint on UI
+        UIManager.instance.UpdateLevelScore(_levelPoint);
+    }
+
+    // Increases level point counts
+    public void IncreaseLevelPoint(int earnedPoints)
+    {
+        _levelPoint += earnedPoints;
 
         Debug.Log("Get " + earnedPoints + " points by block");
 
         // TODO
-        // Update Point on UI
+        // Update LevelPoint on UI
+        UIManager.instance.UpdateLevelScore(_levelPoint);
     }
 
-    // Decreases point counts
-    public void DecreasePoint(int lostPoints)
+    // Decreases level point counts
+    public void DecreaseLevelPoint(int lostPoints)
     {
-        // TODO
-        // Update Point on UI
-
-        if (_totalPoint < lostPoints)
+        if (_levelPoint < lostPoints)
         {
-            ResetPoint();
+            ResetLevelPoint();
 
             return;
         }
 
-        _totalPoint -= lostPoints;
+        _levelPoint -= lostPoints;
+
+        // Update LevelPoint on UI
+        UIManager.instance.UpdateLevelScore(_levelPoint);
     }
-    
+
     // Character gets damage handler
     public void DoDamage(float damageCount)
     {

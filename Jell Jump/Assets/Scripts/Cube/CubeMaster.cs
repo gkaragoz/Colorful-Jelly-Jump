@@ -50,16 +50,16 @@ public class CubeMaster : MonoBehaviour
 
                     case CubeState.USEFULLY:
                         {
-                            // Give Points to character
-                            character.IncreasePoint(_pointsRate);
+                            // Give Level Points to character
+                            character.IncreaseLevelPoint(_pointsRate);
 
                             break;
                         }
 
                     case CubeState.NICELY:
                         {
-                            // Give Points to character
-                            character.IncreasePoint(_pointsRate);
+                            // Give Level Points to character
+                            character.IncreaseLevelPoint(_pointsRate);
 
                             character.FeverJump();
 
