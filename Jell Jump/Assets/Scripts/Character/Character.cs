@@ -132,7 +132,6 @@ public class Character : MonoBehaviour
     {
         _totalPoint += _levelPoint;
 
-        // TODO
         // Update Point on UI
         UIManager.instance.UpdateTotalScore(_totalPoint);
     }
@@ -153,7 +152,6 @@ public class Character : MonoBehaviour
 
         Debug.Log("Get " + earnedPoints + " points by block");
 
-        // TODO
         // Update LevelPoint on UI
         UIManager.instance.UpdateLevelScore(_levelPoint);
     }

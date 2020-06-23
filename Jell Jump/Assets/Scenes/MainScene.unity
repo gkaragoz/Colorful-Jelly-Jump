@@ -805,7 +805,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.06}
+  m_LocalEulerAnglesHint: {x: 0.03, y: 0, z: 0}
 --- !u!114 &871672110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2597,6 +2597,11 @@ PrefabInstance:
       propertyPath: _shouldBlockTurnToRock
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5133000149632375186, guid: 554d4eecf24145a4b81ef69389b43b19,
+        type: 3}
+      propertyPath: _blockState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 554d4eecf24145a4b81ef69389b43b19, type: 3}
 --- !u!1001 &1349706247838738135
@@ -2851,7 +2856,7 @@ PrefabInstance:
     - target: {fileID: 3037440830174660718, guid: 5447447baeb2ce547a8eb14008200c8a,
         type: 3}
       propertyPath: _fragileBlockWaitDuration
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3037440830174660718, guid: 5447447baeb2ce547a8eb14008200c8a,
         type: 3}
@@ -3004,7 +3009,7 @@ PrefabInstance:
     - target: {fileID: 4172230233587508294, guid: 9c8820a16f9e7d84db0604dd8c96959f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.486
+      value: 29.497
       objectReference: {fileID: 0}
     - target: {fileID: 4172230233587508294, guid: 9c8820a16f9e7d84db0604dd8c96959f,
         type: 3}
