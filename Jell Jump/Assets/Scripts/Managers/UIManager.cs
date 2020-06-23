@@ -3,23 +3,42 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI _healtText = null;
+    #region Singleton
+
+    public static UIManager instance;
+
+    private void Awake()
+    {
+        if (instance == null) { instance = this; }
+
+        else if (instance != this) { Destroy(gameObject); }
+    }
+
+    #endregion
 
     [SerializeField]
     private TextMeshProUGUI _pointText = null;
 
-    private Character _myCharacter;
+    // Stores UI's current state
+    private UIState _state = UIState.UI_STARTGAME;
 
-    private void Awake()
+    public void UpdateHealthBar(float currentHealth)
     {
-        _myCharacter = FindObjectOfType<Character>();
+        // TODO
     }
 
-    private void Update()
+    public void UpdateLevelBar(float currentDistance)
     {
-        _healtText.text = "Health: " + _myCharacter.Health();
+        // TODO
+    }
 
-        _pointText.text = "Point: " + _myCharacter.TotalPoint();
+    public void UpdateTotalScore(int currentTotalScore)
+    {
+        // TODO
+    }
+
+    public void UpdateLevelScore(int currentScore)
+    {
+        // TODO
     }
 }

@@ -63,17 +63,26 @@ public class Character : MonoBehaviour
     public void IncreaseGold(int earnedGold)
     {
         _totalGold += earnedGold;
+
+        // TODO
+        // Update Gold on UI
     }
 
     // Gold Decreaser
     public void DecreaseGold(int earnedGold)
     {
         _totalGold -= earnedGold;
+
+        // TODO
+        // Update Gold on UI
     }
 
     // Health Decreaser ( Damage etc. )
     public void DecreaseHealth(float damageCount)
     {
+        // TODO
+        // Update Health on UI
+
         Debug.Log("Get " + damageCount + " damage by block");
 
         if (damageCount > _health)
@@ -90,12 +99,18 @@ public class Character : MonoBehaviour
     public void IncreaseHealth(float recoveryCount)
     {
         _health += recoveryCount;
+
+        // TODO
+        // Update Health on UI
     }
 
     // Resets point counts to zero
     public void ResetPoint()
     {
         _totalPoint = 0;
+
+        // TODO
+        // Update Point on UI
     }
 
     // Increases point counts
@@ -104,12 +119,18 @@ public class Character : MonoBehaviour
         _totalPoint += earnedPoints;
 
         Debug.Log("Get " + earnedPoints + " points by block");
+
+        // TODO
+        // Update Point on UI
     }
 
     // Decreases point counts
     public void DecreasePoint(int lostPoints)
     {
-        if(_totalPoint < lostPoints)
+        // TODO
+        // Update Point on UI
+
+        if (_totalPoint < lostPoints)
         {
             ResetPoint();
 
@@ -135,6 +156,9 @@ public class Character : MonoBehaviour
         Debug.Log("Get " + _health + " damage by block");
 
         _health = 0;
+
+        // TODO
+        // Update Health on UI
 
         OnCharacterDeathState?.Invoke();
 

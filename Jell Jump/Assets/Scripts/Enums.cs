@@ -28,3 +28,10 @@ public enum CameraAnimationState
     ANIM_FOCUS,
     ANIM_CLOSEFOCUS
 }
+
+public enum UIState
+{
+    UI_INGAME,
+    UI_ENDGAME,
+    UI_STARTGAME
+}
