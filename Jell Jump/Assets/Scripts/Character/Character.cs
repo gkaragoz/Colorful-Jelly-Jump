@@ -138,8 +138,8 @@ public class Character : MonoBehaviour
 
         OnCharacterDeathState?.Invoke();
 
-        // TEST
-        GetComponent<Rigidbody>().isKinematic = true;
+        // Stop cube movement immediately
+        GetComponent<CharacterMovement>().DisableMovement();
     }
 
     // Check whether character is dead or

@@ -13,7 +13,7 @@ public class CharacterController : MonoBehaviour
     // Represents Character' Jump Action
     private void DetectJUMP(float jumpPower, float jumpRotation)
     {
-        if (GameManager._gameState != GameState.GAMEOVER)
+        if (GameManager.instance._gameState == GameState.ONPLAY)
         {
             OnJumpDetect?.Invoke(jumpPower, jumpRotation);
         }
@@ -27,7 +27,7 @@ public class CharacterController : MonoBehaviour
     // Represents Character' Stretch Action
     private void DetectSTRETCH(float stretchAxis)
     {
-        if (GameManager._gameState != GameState.GAMEOVER)
+        if (GameManager.instance._gameState == GameState.ONPLAY)
         {
             OnStretchDetect?.Invoke(stretchAxis);
         }

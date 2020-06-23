@@ -6,7 +6,17 @@ public class LevelFinisher : MonoBehaviour
     {
         Character character = collider.GetComponent<Character>();
 
-        if (character != null)
-            LevelManager.FinishLevel();
+        if (GameManager.instance._gameState == GameState.ONPLAY)
+        {
+            if (character != null)
+            {
+                GameManager.instance.FinishGame();
+
+                // Disable the script
+                enabled = false;
+            }
+        }
+        
+            
     }
 }

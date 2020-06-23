@@ -10,8 +10,9 @@ public enum CubeState
 
 public enum GameState
 {
-    GAMEOVER,
-    ONPLAY
+    ONGAMEOVER,
+    ONPLAY,
+    ONFINISH
 }
 
 public enum BlockState
@@ -25,5 +26,5 @@ public enum CameraAnimationState
 {
     ANIM_REVERSEFOCUS,
     ANIM_FOCUS,
-    ANIM_GAMEOVER
+    ANIM_CLOSEFOCUS
 }

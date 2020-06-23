@@ -19,55 +19,58 @@ public class CubeMaster : MonoBehaviour
     {
         Character character = collision.collider.GetComponent<Character>();
 
-        if(character != null && _impactCount != 0)
+        if(GameManager.instance._gameState == GameState.ONPLAY)
         {
-            _impactCount--;
-
-            switch (_cubeState)
+            if (character != null && _impactCount != 0)
             {
-                case CubeState.DANGEROUSLY:
-                    {
-                        // Damage to character
-                        character.DoDamage(_damageRate);
+                _impactCount--;
 
-                        break;
-                    }
+                switch (_cubeState)
+                {
+                    case CubeState.DANGEROUSLY:
+                        {
+                            // Damage to character
+                            character.DoDamage(_damageRate);
 
-                case CubeState.DEADLY:
-                    {
-                        // Dead to character
-                        character.DeadCharacter();
+                            break;
+                        }
 
-                        return;
-                    }
+                    case CubeState.DEADLY:
+                        {
+                            // Dead to character
+                            character.DeadCharacter();
 
-                case CubeState.NONEFFECTIVELY:
-                    {
-                        break;
-                    }
+                            return;
+                        }
 
-                case CubeState.USEFULLY:
-                    {
-                        // Give Points to character
-                        character.IncreasePoint(_pointsRate);
+                    case CubeState.NONEFFECTIVELY:
+                        {
+                            break;
+                        }
 
-                        break;
-                    }
+                    case CubeState.USEFULLY:
+                        {
+                            // Give Points to character
+                            character.IncreasePoint(_pointsRate);
 
-                case CubeState.NICELY:
-                    {
-                        // Give Points to character
-                        character.IncreasePoint(_pointsRate);
+                            break;
+                        }
 
-                        character.FeverJump();
+                    case CubeState.NICELY:
+                        {
+                            // Give Points to character
+                            character.IncreasePoint(_pointsRate);
 
-                        break;
-                    }
+                            character.FeverJump();
 
+                            break;
+                        }
+
+                }
+
+                // Makes all block's child to deactivate and color changes
+                GetComponentInParent<BlockMaster>().InitalizeBlockAction();
             }
-
-            // Makes all block's child to deactivate and color changes
-            GetComponentInParent<BlockMaster>().InitalizeBlockAction();
         }
     }
 

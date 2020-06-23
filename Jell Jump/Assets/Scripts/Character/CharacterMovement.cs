@@ -65,6 +65,18 @@ public class CharacterMovement : MonoBehaviour
         return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
 
+    // Disables Character Movements
+    public void DisableMovement()
+    {
+        GetComponent<Rigidbody>().isKinematic = true;
+    }
+
+    // Enables Character Movements
+    public void EnableMovement()
+    {
+        GetComponent<Rigidbody>().isKinematic = false;
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))

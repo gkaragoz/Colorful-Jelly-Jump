@@ -83,7 +83,7 @@ public class BlockMaster : MonoBehaviour
         {
             yield return new WaitForSeconds(.1f);
 
-            if (GameManager.Character.transform.position.y >= transform.position.y + 0.35)
+            if (GameManager.MyCharacter.transform.position.y >= transform.position.y + 0.35)
             {
                 foreach (CubeMaster cube in GetComponentsInChildren<CubeMaster>())
                 {
@@ -94,7 +94,7 @@ public class BlockMaster : MonoBehaviour
                 shouldCheck = true;
             }
 
-            else if (GameManager.Character.transform.position.y <= transform.position.y - 0.35)
+            else if (GameManager.MyCharacter.transform.position.y <= transform.position.y - 0.35)
             {
                 if (shouldCheck)
                 {

@@ -4,8 +4,23 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    #region Singleton
+
+    public static LevelManager instance;
+
+    private void Awake()
+    {
+        if (instance == null) { instance = this; }
+            
+        else if (instance != this) { Destroy(gameObject); }
+    }
+
+    #endregion
+
     [SerializeField]
     private GameObject _endPointPrefab = null;
+
+    public float CurrentRemainingDistance { get; private set; }
 
     private void Start()
     {
@@ -18,18 +33,15 @@ public class LevelManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.25f);
 
-            if (DistanceController())
-            {
-                break;
-            }
+            // Controls distance between character and end point
+            DistanceController();
         }
     }
 
-    private bool DistanceController()
+    // Calculates distance between character and EndPoint
+    private void DistanceController()
     {
-        float distance = Mathf.Abs(GameManager.Character.transform.position.y - _endPointPrefab.transform.position.y);
-        Debug.LogWarning(distance);
-        return distance < 0.25f ? true : false;
+        CurrentRemainingDistance = Mathf.Abs(GameManager.MyCharacter.transform.position.y - _endPointPrefab.transform.position.y);
     }
 
     public void RestartLevel()
@@ -37,10 +49,12 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public static void FinishLevel()
+    public void FinishLevel()
     {
-        // TODO
-        Debug.Log("Level Finished...");
+        // Stop "LevelStatusController" Coroutine
+        StopCoroutine("LevelStatusController");
+
+        Debug.Log("LEVEL FINISHED...");
     }
 
     public static void LoadNewLevel()

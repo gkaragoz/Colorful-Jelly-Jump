@@ -43,9 +43,9 @@ public class CameraManager : MonoBehaviour
     {
         switch (state)
         {
-            case CameraAnimationState.ANIM_GAMEOVER:
+            case CameraAnimationState.ANIM_CLOSEFOCUS:
                 {
-                    vcam.LookAt = GameManager.Character.transform;
+                    vcam.LookAt = GameManager.MyCharacter.transform;
 
                     DOTween.To(GET, SET, _targetFowDistanceOnGameOver, _fowAnimationDuration).OnComplete(() =>
                     {
