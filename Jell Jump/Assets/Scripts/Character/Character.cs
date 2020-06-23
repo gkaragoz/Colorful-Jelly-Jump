@@ -13,13 +13,13 @@ public class Character : MonoBehaviour
     private float _health = 100;
 
     [SerializeField]
-    private int _jumpLevel = 1;
+    private int _jumpLevel = 0;
 
     [SerializeField]
     private int _jumpLevelRate = 10;
 
     [SerializeField]
-    private int _healthLevel = 1;
+    private int _healthLevel = 0;
 
     private int _totalGold = 0;
 
@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
     private int _feverJumpLevelRate = 10;
 
     [SerializeField]
-    private int _feverJumpLevel = 1;
+    private int _feverJumpLevel = 0;
 
     [SerializeField]
     private int _feverJumpDefaultRate = 200;
@@ -52,7 +52,7 @@ public class Character : MonoBehaviour
     // Health Level Increaser
     public void IncreaseHealthLevel()
     {
-        _healthLevel += _healthIncreaseRate;
+        _healthLevel++;
     }
 
     // Jump Level Increaser
@@ -100,10 +100,16 @@ public class Character : MonoBehaviour
         {
             _health = 0;
 
+            // Update Health on UI
+            UIManager.instance.UpdateHealthBar(_health, HealthMaxLimit());
+
             return;
         }
 
         _health -= damageCount;
+
+        // Update Health on UI
+        UIManager.instance.UpdateHealthBar(_health, HealthMaxLimit());
     }
 
     // Health Increaser ( Recover etc. )
@@ -111,8 +117,14 @@ public class Character : MonoBehaviour
     {
         _health += recoveryCount;
 
-        // TODO
         // Update Health on UI
+        UIManager.instance.UpdateHealthBar(_health, HealthMaxLimit());
+    }
+
+    // Returns Health Max Limit
+    public float HealthMaxLimit()
+    {
+        return _healthIncreaseRate * _healthLevel + 100;
     }
 
     // Increases point counts
@@ -179,8 +191,8 @@ public class Character : MonoBehaviour
 
         _health = 0;
 
-        // TODO
         // Update Health on UI
+        UIManager.instance.UpdateHealthBar(_health, HealthMaxLimit());
 
         OnCharacterDeathState?.Invoke();
 

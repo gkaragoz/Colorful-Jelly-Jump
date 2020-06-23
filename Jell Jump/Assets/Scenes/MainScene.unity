@@ -265,6 +265,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1038006892}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &216875198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1349706247634478697, guid: 57e7d39c44a351a49989972c70ee5df1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1349706247838738135}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &220912818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2192,6 +2204,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelScoreText: {fileID: 511817503}
+  _totalScoreText: {fileID: 216875198}
+  _healthBar: {fileID: 0}
+  _levelhBar: {fileID: 0}
 --- !u!114 &2085078264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,6 +2220,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _endPointPrefab: {fileID: 1030181324}
+  CurrentLevelTier: 1
+  CurrentLevelIndex: 1
 --- !u!114 &2085078265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2539,6 +2556,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1974075039}
     m_Modifications:
+    - target: {fileID: 1349706246003495150, guid: 57e7d39c44a351a49989972c70ee5df1,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBackground
+      objectReference: {fileID: 0}
     - target: {fileID: 1349706246766960614, guid: 57e7d39c44a351a49989972c70ee5df1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2599,35 +2621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_InGame
       objectReference: {fileID: 0}
-    - target: {fileID: 1349706247634478697, guid: 57e7d39c44a351a49989972c70ee5df1,
-        type: 3}
-      propertyPath: m_text
-      value: 'Best : 0'
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349706247634478697, guid: 57e7d39c44a351a49989972c70ee5df1,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349706247732624333, guid: 57e7d39c44a351a49989972c70ee5df1,
+    - target: {fileID: 8511926521736042545, guid: 57e7d39c44a351a49989972c70ee5df1,
         type: 3}
       propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349706247930909128, guid: 57e7d39c44a351a49989972c70ee5df1,
-        type: 3}
-      propertyPath: m_text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349706247930909128, guid: 57e7d39c44a351a49989972c70ee5df1,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8511926521862170087, guid: 57e7d39c44a351a49989972c70ee5df1,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelBar
+      value: LevelBackground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57e7d39c44a351a49989972c70ee5df1, type: 3}
