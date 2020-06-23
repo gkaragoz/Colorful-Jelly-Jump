@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     public GameState _gameState = GameState.ONPLAY;
 
-    public static Character MyCharacter { get; private set; }
+    public Character MyCharacter { get; private set; }
 
     private void Start()
     {

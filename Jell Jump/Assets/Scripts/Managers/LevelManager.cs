@@ -39,13 +39,18 @@ public class LevelManager : MonoBehaviour
 
             // Controls distance between character and end point
             DistanceController();
+
+            // Update Level Bar
+            UIManager.instance.UpdateLevelBar(GameManager.instance.MyCharacter.transform.position.y, 
+                _endPointPrefab.transform.position.y);
         }
     }
 
     // Calculates distance between character and EndPoint
     private void DistanceController()
     {
-        CurrentRemainingDistance = Mathf.Abs(GameManager.MyCharacter.transform.position.y - _endPointPrefab.transform.position.y);
+        CurrentRemainingDistance = Mathf.Abs(GameManager.instance.MyCharacter.transform.position.y - 
+            _endPointPrefab.transform.position.y);
     }
 
     public void RestartLevel()
@@ -60,8 +65,11 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log("LEVEL FINISHED...");
 
-        // TODO
+        // Fill Level Bar
+        UIManager.instance.UpdateLevelBar(_endPointPrefab.transform.position.y,
+            _endPointPrefab.transform.position.y);
 
+        // TODO
         // Load new Level
     }
 

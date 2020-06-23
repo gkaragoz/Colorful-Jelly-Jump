@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     private Image _healthBackground = null;
 
     [SerializeField]
-    private Image _levelhBar = null;
+    private Image _levelBar = null;
 
     [SerializeField]
     private Image _levelBackground = null;
@@ -51,9 +51,17 @@ public class UIManager : MonoBehaviour
         _healthBar.GetComponent<RectTransform>().sizeDelta = new Vector2(PBLength, BGHight);
     }
 
-    public void UpdateLevelBar(float currentDistance)
+    public void UpdateLevelBar(float currentDistance, float distanceMaxLimit)
     {
-        // TODO
+        float BGLength = _levelBackground.GetComponent<RectTransform>().rect.width;
+
+        float BGHight = _levelBackground.GetComponent<RectTransform>().rect.height;
+
+        float PBRate = currentDistance / distanceMaxLimit;
+
+        float PBLength = BGLength * PBRate;
+
+        _levelBar.GetComponent<RectTransform>().sizeDelta = new Vector2(PBLength, BGHight);
     }
 
     public void UpdateTotalScore(int currentTotalScore)
