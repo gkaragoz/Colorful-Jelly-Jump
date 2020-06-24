@@ -468,12 +468,22 @@ PrefabInstance:
     - target: {fileID: 1983578687522612705, guid: fc5e8c81263f272448b0503bcca282da,
         type: 3}
       propertyPath: _jumpLevel
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1983578687522612705, guid: fc5e8c81263f272448b0503bcca282da,
         type: 3}
       propertyPath: _healthLevel
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983578687522612705, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: _totalGold
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983578687522612705, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: _feverJumpLevelRate
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1983578687522612714, guid: fc5e8c81263f272448b0503bcca282da,
         type: 3}
@@ -2386,6 +2396,7 @@ GameObject:
   - component: {fileID: 2085078263}
   - component: {fileID: 2085078261}
   - component: {fileID: 2085078266}
+  - component: {fileID: 2085078267}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2501,6 +2512,18 @@ MonoBehaviour:
   _txtUpgradeHealthCost: {fileID: 746630065}
   _txtUpgradeFever: {fileID: 1540268674}
   _txtUpgradeFeverCost: {fileID: 816632855}
+--- !u!114 &2085078267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085078260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400d846ff00ef64c9d27674aada24af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2100240781
 GameObject:
   m_ObjectHideFlags: 0

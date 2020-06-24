@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
         Screen.orientation = ScreenOrientation.Portrait;
 
         MyCharacter.OnCharacterDeathState += GameOver;
+
+        LoadGame();
     }
 
     // Invokes when start to game
@@ -75,6 +77,16 @@ public class GameManager : MonoBehaviour
 
         // Invokes Level Manager to say Finish Game
         LevelManager.instance.FinishLevel();
+    }
+
+    public void SaveGame()
+    {
+        SaveManager.instance.SaveGame(MyCharacter);
+    }
+
+    public void LoadGame()
+    {
+        SaveManager.instance.LoadGame();
     }
 
     private void OnComplete()

@@ -66,11 +66,11 @@ public class MarketManager : MonoBehaviour
     {
         Character character = FindObjectOfType<Character>();
 
-        int powerLevel = character.JumpLevel();
+        int powerLevel = character.GetJumpLevel();
 
-        int healthLevel = character.HealthLevel();
+        int healthLevel = character.GetHealthLevel();
 
-        int feverLevel = character.FeverJumpLevel();
+        int feverLevel = character.GetFeverJumpLevel();
 
         if(_powerValuesByLevel.Length > powerLevel)
         {
@@ -131,9 +131,9 @@ public class MarketManager : MonoBehaviour
     {
         Character character = FindObjectOfType<Character>();
 
-        int level = character.JumpLevel();
+        int level = character.GetJumpLevel();
 
-        if (character.TotalGold() >= _powerValuesByLevel[level])
+        if (character.GetTotalGold() >= _powerValuesByLevel[level])
         {
             character.IncreaseJumpLevel();
 
@@ -147,9 +147,9 @@ public class MarketManager : MonoBehaviour
     {
         Character character = FindObjectOfType<Character>();
 
-        int level = character.HealthLevel();
+        int level = character.GetHealthLevel();
 
-        if (character.TotalGold() >= _healthValuesByLevel[level])
+        if (character.GetTotalGold() >= _healthValuesByLevel[level])
         {
             character.IncreaseHealthLevel();
 
@@ -163,9 +163,9 @@ public class MarketManager : MonoBehaviour
     {
         Character character = FindObjectOfType<Character>();
 
-        int level = character.FeverJumpLevel();
+        int level = character.GetFeverJumpLevel();
 
-        if (character.TotalGold() >= _feverValuesByLevel[level])
+        if (character.GetTotalGold() >= _feverValuesByLevel[level])
         {
             character.IncreaseFeverJumpLevel();
 

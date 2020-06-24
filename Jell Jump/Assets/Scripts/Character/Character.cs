@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System;
+using UnityEditor.UIElements;
+using static SaveManager;
 
 [RequireComponent(typeof(CharacterController), typeof(CharacterMovement))]
 public class Character : MonoBehaviour
@@ -21,6 +23,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     private int _healthLevel = 0;
 
+    [SerializeField]
     private int _totalGold = 1000;
 
     private int _totalPoint = 0;
@@ -39,17 +42,28 @@ public class Character : MonoBehaviour
     // Invokes when character is dead
     public Action OnCharacterDeathState;
 
-    public float Health() { return _health; }
+    // Invokes when character' stat is on load
+    public Action OnCharacterStatLoad;
 
-    public int JumpLevel() { return _jumpLevel; }
+    public int GetHealthIncreaseRate() { return _healthIncreaseRate; }
 
-    public int HealthLevel() { return _healthLevel; }
+    public float GetHealth() { return _health; }
 
-    public int TotalGold() { return _totalGold; }
+    public int GetJumpLevel() { return _jumpLevel; }
 
-    public int TotalPoint() { return _totalPoint; }
+    public int GetJumpLevelRate() { return _jumpLevelRate; }
 
-    public int FeverJumpLevel() { return _feverJumpLevel; }
+    public int GetHealthLevel() { return _healthLevel; }
+
+    public int GetTotalGold() { return _totalGold; }
+
+    public int GetTotalPoint() { return _totalPoint; }
+
+    public int GetFeverJumpLevelRate() { return _feverJumpLevelRate; }
+
+    public int GetFeverJumpLevel() { return _feverJumpLevel; }
+
+    public int GetFeverJumpDefaultRate() { return _feverJumpDefaultRate; }
 
     // Health Level Increaser
     public void IncreaseHealthLevel()
@@ -240,6 +254,35 @@ public class Character : MonoBehaviour
         return calculatedPower;
     }
 
+    #region SAVE-LOAD
+
+    public void LoadCharacterStats(CharacterStatsPacket packet)
+    {
+        _healthIncreaseRate = packet._healthIncreaseRate;
+
+        _health = packet._health;
+
+        _jumpLevel = packet._jumpLevel;
+
+        _jumpLevelRate = packet._jumpLevelRate;
+
+        _healthLevel = packet._healthLevel;
+
+        _totalGold = packet._totalGold;
+
+        _totalPoint = packet._totalPoint;
+
+        _feverJumpLevelRate = packet._feverJumpLevelRate;
+
+        _feverJumpLevel = packet._feverJumpLevel;
+
+        _feverJumpDefaultRate = packet._feverJumpDefaultRate;
+
+        Debug.Log("Character stats is loaded...");
+    }
+
+    #endregion
+
     private void OnEnable()
     {
         GetComponent<CharacterController>().OnJumpDetect +=
@@ -247,6 +290,8 @@ public class Character : MonoBehaviour
 
         GetComponent<CharacterController>().OnStretchDetect +=
             GetComponent<CharacterMovement>().Stretch;
+
+        SaveManager.instance.OnCharacterLoad += LoadCharacterStats;
     }
 
     private void OnDisable()
@@ -256,5 +301,7 @@ public class Character : MonoBehaviour
 
         GetComponent<CharacterController>().OnStretchDetect -=
          GetComponent<CharacterMovement>().Stretch;
+
+        SaveManager.instance.OnCharacterLoad -= LoadCharacterStats;
     }
 }
