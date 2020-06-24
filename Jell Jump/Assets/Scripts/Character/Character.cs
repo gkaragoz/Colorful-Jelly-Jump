@@ -246,6 +246,14 @@ public class Character : MonoBehaviour
         GetComponent<CharacterMovement>().Jump(_jumpRate);
     }
 
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.W))
+    //    {
+    //        FeverJump();
+    //    }
+    //}
+
     // Calculates jump power via jumpLevel and jumpLevelRate
     public float CalculateJumpPower(float jPower)
     {
@@ -291,7 +299,7 @@ public class Character : MonoBehaviour
         GetComponent<CharacterController>().OnStretchDetect +=
             GetComponent<CharacterMovement>().Stretch;
 
-        SaveManager.instance.OnCharacterLoad += LoadCharacterStats;
+        //SaveManager.instance.OnCharacterLoad += LoadCharacterStats;
     }
 
     private void OnDisable()
@@ -302,6 +310,6 @@ public class Character : MonoBehaviour
         GetComponent<CharacterController>().OnStretchDetect -=
          GetComponent<CharacterMovement>().Stretch;
 
-        SaveManager.instance.OnCharacterLoad -= LoadCharacterStats;
+        //SaveManager.instance.OnCharacterLoad -= LoadCharacterStats;
     }
 }

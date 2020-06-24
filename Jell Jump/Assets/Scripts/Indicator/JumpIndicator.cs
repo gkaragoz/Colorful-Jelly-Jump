@@ -52,6 +52,12 @@ public class JumpIndicator : MonoBehaviour
     {
         // Locate JumpIndicator
         IndicatorLocator();
+
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    // Invokes OnIndicatorReleased with _jumpPower
+        //    OnIndicatorReleased?.Invoke(_maxJumpPower, _indicatorAxis);
+        //}
     }
 
     // While button is holding

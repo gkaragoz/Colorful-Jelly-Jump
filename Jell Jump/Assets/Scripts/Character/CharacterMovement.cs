@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Represents Force Mode for Character")]
-    private ForceMode _jumpForceMode = ForceMode.Force;
+    private ForceMode _jumpForceMode = ForceMode.Impulse;
 
     [SerializeField]
     public static bool _isLanded = true;
@@ -24,11 +24,15 @@ public class CharacterMovement : MonoBehaviour
 
         float power = GetComponent<Character>().CalculateJumpPower(jumpPower);
 
-        if (_isLanded)
+        //if (_isLanded)
         {
             Vector3 rotation = new Vector3(jumpAxis, _jumpYMultiplier, 0);
 
             GetComponent<Rigidbody>().AddForce(rotation * power, _jumpForceMode);
+
+            Debug.Log("JUMP");
+
+            Debug.Log(transform.position.y);
         }
     }
 
@@ -40,6 +44,11 @@ public class CharacterMovement : MonoBehaviour
         Vector3 rotation = new Vector3(0, _jumpYMultiplier, 0);
 
         GetComponent<Rigidbody>().AddForce(rotation * jumpPower, _jumpForceMode);
+
+        Debug.Log("FEVER JUMP");
+
+        Debug.Log(transform.position.y);
+
     }
 
     // Handle character stretch

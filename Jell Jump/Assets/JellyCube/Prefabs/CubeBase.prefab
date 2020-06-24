@@ -4958,7 +4958,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.05, y: 1.05, z: 1.05}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3291473113596966108
 MonoBehaviour:
@@ -5008,10 +5008,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthIncreaseRate: 25
   _health: 100
-  _jumpLevel: 1
-  _healthLevel: 1
-  _totalGold: 0
-  _totalPoint: 0
+  _jumpLevel: 0
+  _jumpLevelRate: 10
+  _healthLevel: 0
+  _totalGold: 6
+  _feverJumpLevelRate: 6
+  _feverJumpLevel: 0
+  _feverJumpDefaultRate: 7
 --- !u!114 &278370620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5026,8 +5029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stretchMultiplier: 0.1
   _jumpYMultiplier: 1
-  _jumpForceMode: 0
-  _isLanded: 1
+  _jumpForceMode: 1
 --- !u!114 &278370621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5052,15 +5054,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68e44201da92d44294e936c9ed824fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _joystickPrefab: {fileID: 452008254072787855, guid: a9ac84814323ffa44a21b13739b9c7eb,
-    type: 3}
   _indicatorPrefab: {fileID: 0}
-  _minJumpPower: 50
-  _maxJumpPower: 300
+  _minJumpPower: 1
+  _maxJumpPower: 5
   _indicatorRate: 0.04
   _jumpPower: 0
-  _jumpIncreaseRate: 10
-  _jumpDecreaseRate: 10
+  _jumpIncreaseRate: 0.25
+  _jumpDecreaseRate: 0.25
   _rotationScale: 0.3
 --- !u!1 &8682718268728863251
 GameObject:
