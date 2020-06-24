@@ -94,6 +94,12 @@ public class CubeMaster : MonoBehaviour
         GetComponent<MeshRenderer>().material.DOColor(targetColor, duration);
     }
 
+    // Enables Pale effect on Cube
+    public void PaleEffectOnCube()
+    {
+        // TODO
+    }
+
     // Makes Cube Interaction to None
     public void MakeCubeNonInteractable()
     {

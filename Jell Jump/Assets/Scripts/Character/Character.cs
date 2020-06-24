@@ -121,26 +121,16 @@ public class Character : MonoBehaviour
         if (damageCount > _health)
         {
             _health = 0;
-
-            // Update Health on UI
-            UIManager.instance.UpdateHealthBar(_health, HealthMaxLimit());
-
             return;
         }
 
         _health -= damageCount;
-
-        // Update Health on UI
-        UIManager.instance.UpdateHealthBar(_health, HealthMaxLimit());
     }
 
     // Health Increaser ( Recover etc. )
     public void IncreaseHealth(float recoveryCount)
     {
         _health += recoveryCount;
-
-        // Update Health on UI
-        UIManager.instance.UpdateHealthBar(_health, HealthMaxLimit());
     }
 
     // Returns Health Max Limit
@@ -210,9 +200,6 @@ public class Character : MonoBehaviour
         Debug.Log("Get " + _health + " damage by block");
 
         _health = 0;
-
-        // Update Health on UI
-        UIManager.instance.UpdateHealthBar(_health, HealthMaxLimit());
 
         OnCharacterDeathState?.Invoke();
 

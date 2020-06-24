@@ -27,12 +27,6 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI _totalScoreText = null;
 
     [SerializeField]
-    private Image _healthBar = null;
-
-    [SerializeField]
-    private Image _healthBackground = null;
-
-    [SerializeField]
     private Image _levelBar = null;
 
     [SerializeField]
@@ -55,19 +49,6 @@ public class UIManager : MonoBehaviour
 
     // Stores UI's current state
     private UIState _state = UIState.UI_STARTGAME;
-
-    public void UpdateHealthBar(float currentHealth, float healthMaxLimit)
-    {
-        float BGLength = _healthBackground.GetComponent<RectTransform>().rect.width;
-
-        float BGHight = _healthBackground.GetComponent<RectTransform>().rect.height;
-
-        float PBRate = currentHealth / healthMaxLimit;
-
-        float PBLength = BGLength * PBRate;
-
-        _healthBar.GetComponent<RectTransform>().sizeDelta = new Vector2(PBLength, BGHight);
-    }
 
     public void UpdateLevelBar(float currentDistance, float distanceMaxLimit)
     {

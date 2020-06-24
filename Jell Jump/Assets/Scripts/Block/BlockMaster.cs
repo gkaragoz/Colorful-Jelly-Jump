@@ -38,6 +38,8 @@ public class BlockMaster : MonoBehaviour
                         // Makes cube interaction to none
                         cube.MakeCubeNonInteractable();
 
+                        cube.PaleEffectOnCube();
+
                         break;
                     }
 
