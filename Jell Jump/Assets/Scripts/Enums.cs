@@ -12,7 +12,8 @@ public enum GameState
 {
     ONGAMEOVER,
     ONPLAY,
-    ONFINISH
+    ONFINISH,
+    ONSTART
 }
 
 public enum BlockState
@@ -33,5 +34,6 @@ public enum UIState
 {
     UI_INGAME,
     UI_RESTARTGAME,
-    UI_STARTGAME
+    UI_STARTGAME,
+    UI_ENDGAME
 }

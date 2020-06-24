@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    public GameState _gameState = GameState.ONPLAY;
+    public GameState _gameState = GameState.ONSTART;
 
     public Character MyCharacter { get; private set; }
 
@@ -28,6 +28,19 @@ public class GameManager : MonoBehaviour
         Screen.orientation = ScreenOrientation.Portrait;
 
         MyCharacter.OnCharacterDeathState += GameOver;
+    }
+
+    // Invokes when start to game
+    public void StartGame()
+    {
+        // Disable Start UI
+        UIManager.instance.DisableStartGameUI();
+
+        // Enable OnPlay UI
+        UIManager.instance.EnableOnGameUI();
+
+        // Enable Joystick
+        UIManager.instance.InstantiateJoystick();
     }
 
     // Invokes when the character is dead
@@ -46,7 +59,7 @@ public class GameManager : MonoBehaviour
         _gameState = GameState.ONFINISH;
 
         // Play the camera zoom animation
-        GetComponent<CameraManager>().CameraAction(CameraAnimationState.ANIM_CLOSEFOCUS, OnComplete);
+        // GetComponent<CameraManager>().CameraAction(CameraAnimationState.ANIM_CLOSEFOCUS, OnComplete);
 
         // Reward To Character
 
@@ -86,6 +99,13 @@ public class GameManager : MonoBehaviour
                 }
 
             case GameState.ONFINISH:
+                {
+                    // TODO
+
+                    break;
+                }
+
+            case GameState.ONSTART:
                 {
                     // TODO
 

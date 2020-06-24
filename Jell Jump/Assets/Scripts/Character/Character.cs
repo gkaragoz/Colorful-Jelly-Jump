@@ -60,7 +60,13 @@ public class Character : MonoBehaviour
     {
         _jumpLevel++;
     }
-    
+
+    // Jump Level Increaser
+    public void IncreaseFeverJumpLevel()
+    {
+        _feverJumpLevel++;
+    }
+
     // Calculates gold rewards
     public void CalculateGoldReward(int levelIndex, int levelTier)
     {
@@ -75,8 +81,8 @@ public class Character : MonoBehaviour
     {
         _totalGold += earnedGold;
 
-        // TODO
         // Update Gold on UI
+        UIManager.instance.UpdateTotalGold(_totalGold);
     }
 
     // Gold Decreaser
@@ -84,8 +90,8 @@ public class Character : MonoBehaviour
     {
         _totalGold -= lostGold;
 
-        // TODO
         // Update Gold on UI
+        UIManager.instance.UpdateTotalGold(_totalGold);
     }
 
     // Health Decreaser ( Damage etc. )

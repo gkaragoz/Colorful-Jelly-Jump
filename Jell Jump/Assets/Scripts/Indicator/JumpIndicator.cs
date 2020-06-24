@@ -5,9 +5,6 @@ using UnityEngine;
 public class JumpIndicator : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _joystickPrefab = null;
-
-    [SerializeField]
     private GameObject _indicatorPrefab = null;
 
     [SerializeField]
@@ -49,12 +46,6 @@ public class JumpIndicator : MonoBehaviour
 
     // Fires while Jump Indicator dragging
     public Action<float> OnIndicatorDrag;
-
-    private void Start()
-    {
-        // Clone the PJoystick Prefab
-        Instantiate(_joystickPrefab);
-    }
 
     // WORST - CASE
     private void Update()

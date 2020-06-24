@@ -18,6 +18,9 @@ public class UIManager : MonoBehaviour
     #endregion
 
     [SerializeField]
+    private GameObject _joystickPrefab = null;
+
+    [SerializeField]
     private TextMeshProUGUI _levelScoreText = null;
 
     [SerializeField]
@@ -34,6 +37,21 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private Image _levelBackground = null;
+
+    [SerializeField]
+    private TextMeshProUGUI _totalGoldText = null;
+
+    [SerializeField]
+    private GameObject _startGameUI = null;
+
+    [SerializeField]
+    private GameObject _restartGameUI = null;
+
+    [SerializeField]
+    private GameObject _inGameUI = null;
+
+    [SerializeField]
+    private GameObject _endGameUI = null;
 
     // Stores UI's current state
     private UIState _state = UIState.UI_STARTGAME;
@@ -72,5 +90,49 @@ public class UIManager : MonoBehaviour
     public void UpdateLevelScore(int currentScore)
     {
         _levelScoreText.text = currentScore.ToString();
+    }
+
+    public void UpdateTotalGold(int currentGold)
+    {
+        _totalGoldText.text = "Gold: " + currentGold.ToString();
+
+        Debug.Log("Gold: " + currentGold.ToString());
+    }
+
+    // Deactivate to UI_STARTGAME
+    public void DisableStartGameUI()
+    {
+        _startGameUI.SetActive(false);
+    }
+
+    // Deactivate to UI_InGame
+    public void DisableOnGameUI()
+    {
+        _inGameUI.SetActive(false);
+    }
+
+    // Activate to UI_STARTGAME
+    public void EnableStartGameUI()
+    {
+        _startGameUI.SetActive(true);
+    }
+
+    // Activate to UI_InGame
+    public void EnableOnGameUI()
+    {
+        _inGameUI.SetActive(true);
+    }
+
+    // Activate to Joystick
+    public void InstantiateJoystick()
+    {
+        // Clone the PJoystick Prefab
+        Instantiate(_joystickPrefab);
+    }
+
+    // Deactivate to Joystick
+    public void DisableJoystick()
+    {
+        _joystickPrefab.SetActive(false);
     }
 }
