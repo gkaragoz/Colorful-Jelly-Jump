@@ -21,7 +21,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     private int _healthLevel = 0;
 
-    private int _totalGold = 0;
+    private int _totalGold = 1000;
 
     private int _totalPoint = 0;
 
@@ -48,6 +48,8 @@ public class Character : MonoBehaviour
     public int TotalGold() { return _totalGold; }
 
     public int TotalPoint() { return _totalPoint; }
+
+    public int FeverJumpLevel() { return _feverJumpLevel; }
 
     // Health Level Increaser
     public void IncreaseHealthLevel()
