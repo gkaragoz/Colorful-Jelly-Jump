@@ -738,12 +738,12 @@ PrefabInstance:
     - target: {fileID: 2242379691618622044, guid: 719af9298e2a67f488fe6ca08898f9ba,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 480
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2242379691618622044, guid: 719af9298e2a67f488fe6ca08898f9ba,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 755.55554
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 2242379691618622044, guid: 719af9298e2a67f488fe6ca08898f9ba,
         type: 3}
@@ -785,10 +785,25 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2242379691618622044, guid: 719af9298e2a67f488fe6ca08898f9ba,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2242379691618622044, guid: 719af9298e2a67f488fe6ca08898f9ba,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2242379691618622044, guid: 719af9298e2a67f488fe6ca08898f9ba,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5550590660972737819, guid: 719af9298e2a67f488fe6ca08898f9ba,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5550590660972737819, guid: 719af9298e2a67f488fe6ca08898f9ba,
         type: 3}
@@ -809,6 +824,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550590660972737819, guid: 719af9298e2a67f488fe6ca08898f9ba,
+        type: 3}
+      propertyPath: m_text
+      value: 'Gold : 0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550590660972737819, guid: 719af9298e2a67f488fe6ca08898f9ba,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 44.75
       objectReference: {fileID: 0}
     - target: {fileID: 8958827431941739728, guid: 719af9298e2a67f488fe6ca08898f9ba,
         type: 3}
