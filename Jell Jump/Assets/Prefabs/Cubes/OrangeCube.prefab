@@ -113,7 +113,7 @@ MonoBehaviour:
   _damageRate: 15
   _pointsRate: 0
   _impactCount: 1
-  _paleColorEffect: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
+  _paleColorEffect: {r: 1, g: 0.54509807, b: 0.25882354, a: 0.5882353}
 --- !u!1001 &1799679277600744032
 PrefabInstance:
   m_ObjectHideFlags: 0
