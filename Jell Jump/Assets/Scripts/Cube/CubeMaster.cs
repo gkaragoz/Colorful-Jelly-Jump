@@ -15,6 +15,9 @@ public class CubeMaster : MonoBehaviour
     [SerializeField]
     private int _impactCount = 1;
 
+    [SerializeField]
+    private Color _paleColorEffect = Color.cyan;
+
     private void OnCollisionEnter(Collision collision)
     {
         Character character = collision.collider.GetComponent<Character>();
@@ -95,9 +98,10 @@ public class CubeMaster : MonoBehaviour
     }
 
     // Enables Pale effect on Cube
-    public void PaleEffectOnCube()
+    public void PaleEffectOnCube(float duration)
     {
         // TODO
+        GetComponent<MeshRenderer>().material.DOColor(_paleColorEffect, duration);
     }
 
     // Makes Cube Interaction to None

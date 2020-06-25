@@ -16,6 +16,9 @@ public class BlockMaster : MonoBehaviour
     [SerializeField]
     private float _fragileBlockWaitDuration = 1f;
 
+    [SerializeField]
+    private float _paleEffectDuration = 1f;
+
     private void Start()
     {
         StartCoroutine("OnCharacterDetect");
@@ -38,7 +41,8 @@ public class BlockMaster : MonoBehaviour
                         // Makes cube interaction to none
                         cube.MakeCubeNonInteractable();
 
-                        cube.PaleEffectOnCube();
+                        // Pale efects on cube activater
+                        cube.PaleEffectOnCube(_paleEffectDuration);
 
                         break;
                     }
