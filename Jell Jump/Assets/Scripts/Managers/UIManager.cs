@@ -54,6 +54,11 @@ public class UIManager : MonoBehaviour
     // Stores UI's current state
     private UIState _state = UIState.UI_STARTGAME;
 
+    private void Start()
+    {
+        UpdateTotalGold(GameManager.instance.MyCharacter.GetTotalGold());
+    }
+
     public void UpdateLevelBar(float currentDistance, float distanceMaxLimit)
     {
         float BGLength = _levelBackground.GetComponent<RectTransform>().rect.width;

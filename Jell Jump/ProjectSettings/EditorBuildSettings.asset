@@ -29,7 +29,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/JellyCube/Levels/cube_behaviours.unity
     guid: 44e15ff50f26cc243b7068b1a3f4cf7e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: 21655c0d6edaf6649b59fe38e7969d69
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: c42e73a904165b14dac741f4d6654c7a
   m_configObjects: {}

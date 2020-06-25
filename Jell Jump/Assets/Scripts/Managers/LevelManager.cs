@@ -72,7 +72,7 @@ public class LevelManager : MonoBehaviour
         // TODO
         // Load new Level
 
-        RestartLevel();
+        // RestartLevel();
     }
 
     public static void LoadNewLevel()

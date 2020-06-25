@@ -7,48 +7,75 @@ public class ThemeColorChanger : MonoBehaviour
 
     [SerializeField]
     private Color[] _colors;
+    [SerializeField]
+    private Color[] _wallColors;
 
     [HideInInspector]
     public Renderer swatchingRenderer;
+    [SerializeField]
+    private Renderer[] _wallRenderers;
 
-    static MaterialPropertyBlock mpb;
+    static MaterialPropertyBlock mpbGround;
+    static MaterialPropertyBlock mpbWall;
     static int colorShaderId;
 
     [SerializeField]
     private Color _currentColor;
+    [SerializeField]
+    private Color _currentColorWalls;
 
     private void Awake()
     {
-        if (mpb == null)
-        {
-            mpb = new MaterialPropertyBlock();
-            colorShaderId = Shader.PropertyToID("_BaseColor");
-        }
-        if (swatchingRenderer == null)
-        {
-            swatchingRenderer = GetComponent<Renderer>();
-        }
+        mpbGround = new MaterialPropertyBlock();
+        mpbWall = new MaterialPropertyBlock();
 
-        mpb.SetColor(colorShaderId, _currentColor);
-        swatchingRenderer.SetPropertyBlock(mpb);
+        colorShaderId = Shader.PropertyToID("_BaseColor");
+
+        swatchingRenderer = GetComponent<Renderer>();
+
+        mpbGround.SetColor(colorShaderId, _currentColor);
+        mpbWall.SetColor(colorShaderId, _currentColorWalls);
+
+        swatchingRenderer.SetPropertyBlock(mpbGround);
+
+        foreach (var item in _wallRenderers)
+        {
+            item.SetPropertyBlock(mpbWall);
+        }
     }
 
     private void Update()
     {
-        Color c = Color.Lerp(mpb.GetColor(colorShaderId), _currentColor, Time.deltaTime);
-        mpb.SetColor(colorShaderId, c);
-        swatchingRenderer.SetPropertyBlock(mpb);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ChangeColor();
+        }
+
+        Color c = Color.Lerp(mpbGround.GetColor(colorShaderId), _currentColor, Time.deltaTime);
+        mpbGround.SetColor(colorShaderId, c);
+        swatchingRenderer.SetPropertyBlock(mpbGround);
+
+
+        Color cWall = Color.Lerp(mpbWall.GetColor(colorShaderId), _currentColorWalls, Time.deltaTime);
+        mpbWall.SetColor(colorShaderId, cWall);
+
+        foreach (var item in _wallRenderers)
+        {
+            item.SetPropertyBlock(mpbWall);
+        }
     }
 
-    private Color GetRandomColor()
+    private Color[] GetRandomColor()
     {
-        Color color;
+        Color[] color = new Color[2];
         while (true)
         {
-            color = _colors[Random.Range(0, _colors.Length)];
+            int index = Random.Range(0, _colors.Length);
+            color[0] = _colors[index];
 
-            if (color != _currentColor)
+            if (color[0] != _currentColor)
             {
+                color[1] = _wallColors[index];
                 break;
             }
         }
@@ -58,7 +85,10 @@ public class ThemeColorChanger : MonoBehaviour
 
     public void ChangeColor()
     {
-        _currentColor = GetRandomColor();
+        Color[] c = GetRandomColor();
+
+        _currentColor = c[0];
+        _currentColorWalls = c[1];
     }
     public bool IsEqualTo(Color me, Color other)
     {
