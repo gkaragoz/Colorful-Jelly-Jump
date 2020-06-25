@@ -28,9 +28,6 @@ public class CharacterMovement : MonoBehaviour
     {
         if (_canJump)
         {
-            // FIX ENDLESS SPEED ISSUE
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-
             // FIX STRETCING ISSUE
             GetComponent<Rigidbody>().freezeRotation = false;
 
