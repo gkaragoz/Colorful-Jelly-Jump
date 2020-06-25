@@ -9591,7 +9591,7 @@ MonoBehaviour:
   _damageRate: 0
   _pointsRate: 0
   _impactCount: 1
-  _paleColorEffect: {r: 0, g: 1, b: 1, a: 1}
+  _paleColorEffect: {r: 1, g: 0.34117648, b: 0.42352942, a: 0.5882353}
 --- !u!65 &1524276820
 BoxCollider:
   m_ObjectHideFlags: 0
