@@ -103,5 +103,7 @@ public class SaveManager : MonoBehaviour
 
         // Invokes OnCharacterLoad
         OnCharacterLoad?.Invoke(loadedCharacter);
+
+        Debug.Log("Character stats is LOADED...");
     }
 }

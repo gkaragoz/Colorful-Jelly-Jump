@@ -28,6 +28,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     private int _totalGold = 1000;
 
+    [SerializeField]
     private int _totalPoint = 0;
 
     private int _levelPoint = 0;
