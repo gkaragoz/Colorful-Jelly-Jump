@@ -2,6 +2,7 @@
 using System;
 using UnityEditor.UIElements;
 using static SaveManager;
+using DG.Tweening;
 
 [RequireComponent(typeof(CharacterController), typeof(CharacterMovement))]
 public class Character : MonoBehaviour
@@ -38,6 +39,12 @@ public class Character : MonoBehaviour
 
     [SerializeField]
     private int _feverJumpDefaultRate = 200;
+
+    [SerializeField]
+    private float _maxScale = 3.5f;
+
+    [SerializeField]
+    private float _minScale = 2.5f;
 
     // Invokes when character is dead
     public Action OnCharacterDeathState;
@@ -121,16 +128,26 @@ public class Character : MonoBehaviour
         if (damageCount > _health)
         {
             _health = 0;
+
+            // Scales character by health
+            ScaleCharacterByHealth();
+
             return;
         }
 
         _health -= damageCount;
+
+        // Scales character by health
+        ScaleCharacterByHealth();
     }
 
     // Health Increaser ( Recover etc. )
     public void IncreaseHealth(float recoveryCount)
     {
         _health += recoveryCount;
+
+        // Scales character by health
+        ScaleCharacterByHealth();
     }
 
     // Returns Health Max Limit
@@ -201,6 +218,9 @@ public class Character : MonoBehaviour
 
         _health = 0;
 
+        // Scales character by health
+        ScaleCharacterByHealth();
+
         OnCharacterDeathState?.Invoke();
 
         // Stop cube movement immediately
@@ -247,6 +267,16 @@ public class Character : MonoBehaviour
         float calculatedPower = ((_jumpLevelRate * _jumpLevel * jPower) / 100) + jPower;
 
         return calculatedPower;
+    }
+
+    // Scales character when get damage
+    public void ScaleCharacterByHealth()
+    {
+        float rate = _health / HealthMaxLimit();
+
+        float endValue = Mathf.Lerp(_minScale, _maxScale, rate);
+
+        transform.DOScale(endValue, .25f);
     }
 
     #region SAVE-LOAD

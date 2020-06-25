@@ -29,10 +29,6 @@ public class CharacterMovement : MonoBehaviour
             Vector3 rotation = new Vector3(jumpAxis, _jumpYMultiplier, 0);
 
             GetComponent<Rigidbody>().AddForce(rotation * power, _jumpForceMode);
-
-            Debug.Log("JUMP");
-
-            Debug.Log(transform.position.y);
         }
     }
 
@@ -44,11 +40,6 @@ public class CharacterMovement : MonoBehaviour
         Vector3 rotation = new Vector3(0, _jumpYMultiplier, 0);
 
         GetComponent<Rigidbody>().AddForce(rotation * jumpPower, _jumpForceMode);
-
-        Debug.Log("FEVER JUMP");
-
-        Debug.Log(transform.position.y);
-
     }
 
     // Handle character stretch
