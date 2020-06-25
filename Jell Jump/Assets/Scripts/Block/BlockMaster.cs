@@ -8,7 +8,7 @@ public class BlockMaster : MonoBehaviour
     private Color _paleColor = Color.gray;
 
     [SerializeField]
-    private BlockState _blockState = BlockState.NORMAL;
+    public BlockState _blockState = BlockState.NORMAL;
 
     [SerializeField]
     private float _fragileBlockScaleDuration = 1f;
@@ -21,7 +21,10 @@ public class BlockMaster : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine("OnCharacterDetect");
+        if(_blockState != BlockState.ENDGAME)
+        {
+            StartCoroutine("OnCharacterDetect");
+        }
     }
 
     // Makes all cubes to inactive
@@ -74,6 +77,13 @@ public class BlockMaster : MonoBehaviour
                         break;
                     }
 
+                case BlockState.ENDGAME:
+                    {
+                        // Invokes cube's deactive states
+                        cube.DeactiveState(_paleColor, 2);
+
+                        break;
+                    }
             }
 
             i++;

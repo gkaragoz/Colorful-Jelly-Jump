@@ -20,7 +20,8 @@ public enum BlockState
 {
     NORMAL,
     STONED,
-    FRAGILE
+    FRAGILE,
+    ENDGAME
 }
 
 public enum CameraAnimationState

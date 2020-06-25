@@ -964,18 +964,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7703770018722063905}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1030181327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030181324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273e675a3c4820247921d4b8deaf44cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1038006892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3878,15 +3866,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2450787366082127936, guid: 9c8820a16f9e7d84db0604dd8c96959f,
+        type: 3}
+      propertyPath: _blockState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4172230233587508294, guid: 9c8820a16f9e7d84db0604dd8c96959f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.3
       objectReference: {fileID: 0}
     - target: {fileID: 4172230233587508294, guid: 9c8820a16f9e7d84db0604dd8c96959f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.497
+      value: 29.38
       objectReference: {fileID: 0}
     - target: {fileID: 4172230233587508294, guid: 9c8820a16f9e7d84db0604dd8c96959f,
         type: 3}
@@ -3933,25 +3926,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7697883421619692113, guid: 9c8820a16f9e7d84db0604dd8c96959f,
-        type: 3}
-      propertyPath: m_Center.x
-      value: -0.08333713
-      objectReference: {fileID: 0}
-    - target: {fileID: 7697883421619692113, guid: 9c8820a16f9e7d84db0604dd8c96959f,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 3.1910992
-      objectReference: {fileID: 0}
-    - target: {fileID: 7697883421619692113, guid: 9c8820a16f9e7d84db0604dd8c96959f,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8438524063132204931, guid: 9c8820a16f9e7d84db0604dd8c96959f,
         type: 3}
       propertyPath: m_Name
-      value: EndLevelPoint
+      value: EndLevelBlock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c8820a16f9e7d84db0604dd8c96959f, type: 3}

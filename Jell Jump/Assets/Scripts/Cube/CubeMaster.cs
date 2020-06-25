@@ -81,6 +81,15 @@ public class CubeMaster : MonoBehaviour
                 GetComponentInParent<BlockMaster>().InitalizeBlockAction();
             }
         }
+
+        else
+        {
+            if(GetComponentInParent<BlockMaster>()._blockState == BlockState.ENDGAME)
+            {
+                // Makes all block's child to deactivate and color changes
+                GetComponentInParent<BlockMaster>().InitalizeBlockAction();
+            }
+        }
     }
 
     // Disables cube' collider
