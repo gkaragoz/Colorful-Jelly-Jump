@@ -41,6 +41,8 @@ public class JumpIndicator : MonoBehaviour
     // Defines Indicator Axis value
     private float _indicatorAxis;
 
+    private bool _isPressed;
+
     // Fires when Jump Indicator released
     public Action<float, float> OnIndicatorReleased;
 
@@ -76,30 +78,40 @@ public class JumpIndicator : MonoBehaviour
     // When button is relased
     private void OnReleased()
     {
-        // Hide JumpIndicator
-        HideIndicator();
+        if (_isPressed)
+        {
+            // Hide JumpIndicator
+            HideIndicator();
 
-        // Stop JumpIndicator Action Coroutine
-        StopCoroutine("IndicatorAction");
+            // Stop JumpIndicator Action Coroutine
+            StopCoroutine("IndicatorAction");
 
-        // Invokes OnIndicatorReleased with _jumpPower
-        OnIndicatorReleased?.Invoke(_jumpPower, _indicatorAxis);
+            // Invokes OnIndicatorReleased with _jumpPower
+            OnIndicatorReleased?.Invoke(_jumpPower, _indicatorAxis);
 
-        // CameraFocus Animation Reverse
-        FindObjectOfType<CameraManager>().CameraAction(CameraAnimationState.ANIM_REVERSEFOCUS, null);
+            // CameraFocus Animation Reverse
+            FindObjectOfType<CameraManager>().CameraAction(CameraAnimationState.ANIM_REVERSEFOCUS, null);
+
+            _isPressed = false;
+        }
     }
 
     // When button is pressed
     private void OnPressed()   
     {
-        // Visible JumpIndicator
-        ShowIndicator();
+        if (CharacterMovement._canJump)
+        {
+            // Visible JumpIndicator
+            ShowIndicator();
 
-        // Start JumpIndicator Action Coroutine
-        StartCoroutine("IndicatorAction");
+            // Start JumpIndicator Action Coroutine
+            StartCoroutine("IndicatorAction");
 
-        // CameraFocus Animation Forward
-        FindObjectOfType<CameraManager>().CameraAction(CameraAnimationState.ANIM_FOCUS, null);
+            // CameraFocus Animation Forward
+            FindObjectOfType<CameraManager>().CameraAction(CameraAnimationState.ANIM_FOCUS, null);
+
+            _isPressed = true;
+        }
     }
 
     // Indicator rotation handler

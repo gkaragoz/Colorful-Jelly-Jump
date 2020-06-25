@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -14,27 +15,40 @@ public class CharacterMovement : MonoBehaviour
     [Tooltip("Represents Force Mode for Character")]
     private ForceMode _jumpForceMode = ForceMode.Impulse;
 
+    [Header("DO NOT CHANGE")]
+
     [SerializeField]
     public static bool _isLanded = true;
+
+    [SerializeField]
+    public static bool _canJump = true;
 
     // Handle character jump
     public void Jump(float jumpPower, float jumpAxis)
     {
-        GetComponent<Rigidbody>().freezeRotation = false;
-
-        float power = GetComponent<Character>().CalculateJumpPower(jumpPower);
-
-        //if (_isLanded)
+        if (_canJump)
         {
+            // FIX ENDLESS SPEED ISSUE
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+            // FIX STRETCING ISSUE
+            GetComponent<Rigidbody>().freezeRotation = false;
+
+            float power = GetComponent<Character>().CalculateJumpPower(jumpPower);
+
             Vector3 rotation = new Vector3(jumpAxis, _jumpYMultiplier, 0);
 
             GetComponent<Rigidbody>().AddForce(rotation * power, _jumpForceMode);
+
+            // Start Timer
+            StartCoroutine("JumpTimer");
         }
     }
 
     // Handle character Fever jump
     public void Jump(float jumpPower)
     {
+        // FIX STRETCING ISSUE
         GetComponent<Rigidbody>().freezeRotation = false;
 
         Vector3 rotation = new Vector3(0, _jumpYMultiplier, 0);
@@ -63,6 +77,16 @@ public class CharacterMovement : MonoBehaviour
         float distToGround = GetComponent<BoxCollider>().bounds.extents.y;
 
         return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+    }
+
+    // JUMP TIMER
+    private IEnumerator JumpTimer()
+    {
+        _canJump = false;
+
+        yield return new WaitForSeconds(.25f);
+
+        _canJump = true;
     }
 
     // Disables Character Movements
