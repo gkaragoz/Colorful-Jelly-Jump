@@ -81,10 +81,24 @@ public class Character : MonoBehaviour
 
     public int GetFeverJumpDefaultRate() { return _feverJumpDefaultRate; }
 
+    private void Start()
+    {
+        // Update health via healthLevel
+        UpdateHealthViaLevel();
+    }
+
     // Health Level Increaser
     public void IncreaseHealthLevel()
     {
         _healthLevel++;
+
+        // Update health via healthLevel
+        UpdateHealthViaLevel();
+    }
+
+    private void UpdateHealthViaLevel()
+    {
+        _health = _health + _healthIncreaseRate * _healthLevel;
     }
 
     // Jump Level Increaser
@@ -340,13 +354,7 @@ public class Character : MonoBehaviour
 
     public void LoadCharacterStats(CharacterStatsPacket packet)
     {
-        _healthIncreaseRate = packet._healthIncreaseRate;
-
-        _health = packet._health;
-
         _jumpLevel = packet._jumpLevel;
-
-        _jumpLevelRate = packet._jumpLevelRate;
 
         _healthLevel = packet._healthLevel;
 
@@ -354,11 +362,7 @@ public class Character : MonoBehaviour
 
         _totalPoint = packet._totalPoint;
 
-        _feverJumpLevelRate = packet._feverJumpLevelRate;
-
         _feverJumpLevel = packet._feverJumpLevel;
-
-        _feverJumpDefaultRate = packet._feverJumpDefaultRate;
 
         Debug.Log("Character stats is loaded...");
     }
@@ -372,8 +376,6 @@ public class Character : MonoBehaviour
 
         GetComponent<CharacterController>().OnStretchDetect +=
             GetComponent<CharacterMovement>().Stretch;
-
-        SaveManager.instance.OnCharacterLoad += LoadCharacterStats;
     }
 
     private void OnDisable()
@@ -383,7 +385,5 @@ public class Character : MonoBehaviour
 
         GetComponent<CharacterController>().OnStretchDetect -=
          GetComponent<CharacterMovement>().Stretch;
-
-        SaveManager.instance.OnCharacterLoad -= LoadCharacterStats;
     }
 }
