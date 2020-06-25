@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI _totalGoldText = null;
+
+    [SerializeField]
+    private TextMeshProUGUI _comboPointText = null;
 
     [SerializeField]
     private GameObject _startGameUI = null;
@@ -78,6 +82,17 @@ public class UIManager : MonoBehaviour
         _totalGoldText.text = "Gold: " + currentGold.ToString();
 
         Debug.Log("Gold: " + currentGold.ToString());
+    }
+
+    public void UpdateComboPoint(int point)
+    {
+        _comboPointText.text = "x" + point.ToString();
+    }
+
+    // Deactivate to ComboText
+    public void DisableComboText()
+    {
+        _comboPointText.text = "";
     }
 
     // Deactivate to UI_STARTGAME

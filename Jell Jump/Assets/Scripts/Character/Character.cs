@@ -3,6 +3,7 @@ using System;
 using UnityEditor.UIElements;
 using static SaveManager;
 using DG.Tweening;
+using System.Collections;
 
 [RequireComponent(typeof(CharacterController), typeof(CharacterMovement))]
 public class Character : MonoBehaviour
@@ -45,6 +46,10 @@ public class Character : MonoBehaviour
 
     [SerializeField]
     private float _minScale = 2.5f;
+
+    private bool _onCombo;
+
+    private int _comboCount;
 
     // Invokes when character is dead
     public Action OnCharacterDeathState;
@@ -120,9 +125,6 @@ public class Character : MonoBehaviour
     // Health Decreaser ( Damage etc. )
     public void DecreaseHealth(float damageCount)
     {
-        // TODO
-        // Update Health on UI
-
         Debug.Log("Get " + damageCount + " damage by block");
 
         if (damageCount > _health)
@@ -277,6 +279,57 @@ public class Character : MonoBehaviour
         float endValue = Mathf.Lerp(_minScale, _maxScale, rate);
 
         transform.DOScale(endValue, .25f);
+    }
+
+    // Handle combo stuff
+    public void ComboActivater(int point)
+    {
+        if (_onCombo)
+        {
+            // Reset Timer
+            StopCoroutine("ComboTimer");
+
+            StartCoroutine("ComboTimer");
+
+            // Increase Combo count
+            _comboCount *= point;
+
+            // TODO
+            // Update UI FOR COMBO
+            UIManager.instance.UpdateComboPoint(_comboCount);
+
+            // Camera Animation For Combo
+
+            Debug.Log("COMBO: " + _comboCount);
+        }
+
+        else
+        {
+            // Start Timer
+            StartCoroutine("ComboTimer");
+
+            _comboCount = point;
+
+            // Update UI FOR COMBO
+            UIManager.instance.UpdateComboPoint(_comboCount);
+        }
+    }
+
+    // Combo Timer
+    private IEnumerator ComboTimer()
+    {
+        _onCombo = true;
+
+        yield return new WaitForSeconds(3);
+
+        // Reset Combo
+
+        _onCombo = false;
+
+        _comboCount = 0;
+
+        // Update UI FOR COMBO
+        UIManager.instance.DisableComboText();
     }
 
     #region SAVE-LOAD

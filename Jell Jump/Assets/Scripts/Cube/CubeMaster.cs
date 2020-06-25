@@ -56,6 +56,9 @@ public class CubeMaster : MonoBehaviour
                             // Give Level Points to character
                             character.IncreaseLevelPoint(_pointsRate);
 
+                            // Activate combo
+                            character.ComboActivater(_pointsRate);
+
                             break;
                         }
 
@@ -63,6 +66,9 @@ public class CubeMaster : MonoBehaviour
                         {
                             // Give Level Points to character
                             character.IncreaseLevelPoint(_pointsRate);
+
+                            // Activate combo
+                            character.ComboActivater(_pointsRate);
 
                             character.FeverJump();
 
