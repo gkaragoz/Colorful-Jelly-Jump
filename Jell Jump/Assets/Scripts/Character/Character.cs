@@ -47,6 +47,9 @@ public class Character : MonoBehaviour
     [SerializeField]
     private float _minScale = 2.5f;
 
+    [SerializeField]
+    private float _comboHoldTime = 3;
+
     private bool _onCombo;
 
     private int _comboCount;
@@ -320,7 +323,7 @@ public class Character : MonoBehaviour
     {
         _onCombo = true;
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(_comboHoldTime);
 
         // Reset Combo
 
@@ -369,7 +372,7 @@ public class Character : MonoBehaviour
         GetComponent<CharacterController>().OnStretchDetect +=
             GetComponent<CharacterMovement>().Stretch;
 
-        //SaveManager.instance.OnCharacterLoad += LoadCharacterStats;
+        SaveManager.instance.OnCharacterLoad += LoadCharacterStats;
     }
 
     private void OnDisable()
@@ -380,6 +383,6 @@ public class Character : MonoBehaviour
         GetComponent<CharacterController>().OnStretchDetect -=
          GetComponent<CharacterMovement>().Stretch;
 
-        //SaveManager.instance.OnCharacterLoad -= LoadCharacterStats;
+        SaveManager.instance.OnCharacterLoad -= LoadCharacterStats;
     }
 }

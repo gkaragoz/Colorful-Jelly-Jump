@@ -4892,7 +4892,7 @@ Transform:
   m_GameObject: {fileID: 8535852527125041994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0.5, z: 0.5}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 5604298401489407377}
   - {fileID: 4597004826411170374}
@@ -5015,6 +5015,9 @@ MonoBehaviour:
   _feverJumpLevelRate: 6
   _feverJumpLevel: 0
   _feverJumpDefaultRate: 7
+  _maxScale: 0.35
+  _minScale: 0.25
+  _comboHoldTime: 3
 --- !u!114 &278370620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5054,7 +5057,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68e44201da92d44294e936c9ed824fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _indicatorPrefab: {fileID: 0}
+  _indicatorPrefab: {fileID: 326467468492554350, guid: 46d4b7a276e94a1499ecf25747f5d74b,
+    type: 3}
   _minJumpPower: 1
   _maxJumpPower: 5
   _indicatorRate: 0.04

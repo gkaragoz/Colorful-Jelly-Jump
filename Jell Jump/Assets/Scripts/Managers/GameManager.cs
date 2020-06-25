@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
         MyCharacter.OnCharacterDeathState += GameOver;
 
+        // Load saved game
         LoadGame();
     }
 
@@ -43,6 +44,9 @@ public class GameManager : MonoBehaviour
 
         // Enable Joystick
         UIManager.instance.InstantiateJoystick();
+
+        // Save Current Game
+        SaveGame();
     }
 
     // Invokes when the character is dead
@@ -74,6 +78,9 @@ public class GameManager : MonoBehaviour
 
         // Show popup
         // TODO
+
+        // Save Current Game
+        SaveGame();
 
         // Invokes Level Manager to say Finish Game
         LevelManager.instance.FinishLevel();

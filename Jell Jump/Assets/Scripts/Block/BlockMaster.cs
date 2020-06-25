@@ -80,7 +80,7 @@ public class BlockMaster : MonoBehaviour
                 case BlockState.ENDGAME:
                     {
                         // Invokes cube's deactive states
-                        cube.DeactiveState(_paleColor, 2);
+                        cube.DeactiveState(_paleColor, 1);
 
                         break;
                     }
