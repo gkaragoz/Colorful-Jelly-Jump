@@ -64,7 +64,7 @@ public class MarketManager : MonoBehaviour
 
     public void UpdateMarketContents()
     {
-        Character character = FindObjectOfType<Character>();
+        Character character = GameManager.instance.MyCharacter;
 
         int powerLevel = character.GetJumpLevel();
 
@@ -79,6 +79,11 @@ public class MarketManager : MonoBehaviour
             _txtUpgradePower.text = "Power " + "Lv" + (powerLevel + 1);
 
             _txtUpgradePowerCost.text = _powerValuesByLevel[powerLevel].ToString() + " Gold";
+
+            if ( (character.GetTotalGold() >= _powerValuesByLevel[character.GetJumpLevel()]) == false)
+            {
+                _btUpgradePower.interactable = false;
+            }
         }
 
         else
@@ -94,9 +99,14 @@ public class MarketManager : MonoBehaviour
         {
             _btUpgradeHealth.interactable = true;
 
-            _txtUpgradeHealth.text = "Health " + "Lv" + (healthLevel+1);
+            _txtUpgradeHealth.text = "Health " + "Lv" + (healthLevel + 1);
 
             _txtUpgradeHealthCost.text = _healthValuesByLevel[healthLevel].ToString() + " Gold";
+
+            if ( (character.GetTotalGold() >= _healthValuesByLevel[character.GetHealthLevel()]) == false)
+            {
+                _btUpgradeHealth.interactable = false;
+            }
         }
 
         else
@@ -115,6 +125,11 @@ public class MarketManager : MonoBehaviour
             _txtUpgradeFever.text = "Fever " + "Lv" + (feverLevel + 1);
 
             _txtUpgradeFeverCost.text = _feverValuesByLevel[feverLevel].ToString() + " Gold";
+
+            if ( (character.GetTotalGold() >= _feverValuesByLevel[character.GetFeverJumpLevel()]) == false)
+            {
+                _btUpgradeFever.interactable = false;
+            }
         }
 
         else
@@ -129,7 +144,7 @@ public class MarketManager : MonoBehaviour
 
     public void BuyPower()
     {
-        Character character = FindObjectOfType<Character>();
+        Character character = GameManager.instance.MyCharacter;
 
         int level = character.GetJumpLevel();
 
@@ -145,7 +160,7 @@ public class MarketManager : MonoBehaviour
 
     public void BuyHealth()
     {
-        Character character = FindObjectOfType<Character>();
+        Character character = GameManager.instance.MyCharacter;
 
         int level = character.GetHealthLevel();
 
@@ -161,7 +176,7 @@ public class MarketManager : MonoBehaviour
 
     public void BuyFeverJump()
     {
-        Character character = FindObjectOfType<Character>();
+        Character character = GameManager.instance.MyCharacter;
 
         int level = character.GetFeverJumpLevel();
 
