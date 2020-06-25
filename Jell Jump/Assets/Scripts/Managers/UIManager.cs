@@ -57,6 +57,8 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         UpdateTotalGold(GameManager.instance.MyCharacter.GetTotalGold());
+
+        UpdateTotalScore(GameManager.instance.MyCharacter.GetTotalGold());
     }
 
     public void UpdateLevelBar(float currentDistance, float distanceMaxLimit)
