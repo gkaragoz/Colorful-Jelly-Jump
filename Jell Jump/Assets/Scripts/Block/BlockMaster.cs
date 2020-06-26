@@ -53,7 +53,7 @@ public class BlockMaster : MonoBehaviour
                 case BlockState.STONED:
                     {
                         // Invokes cube's deactive states
-                        cube.DeactiveState(_paleColor, i * 0.75f);
+                        cube.DeactiveState(_paleColor, 3);
 
                         if (i == cubeMasters.Length)
                         {
@@ -67,7 +67,7 @@ public class BlockMaster : MonoBehaviour
                 case BlockState.FRAGILE:
                     {
                         // Invokes cube's deactive states
-                        cube.DeactiveState(_paleColor, i * 0.75f);
+                        cube.DeactiveState(_paleColor, 3);
 
                         if(i == cubeMasters.Length)
                         {

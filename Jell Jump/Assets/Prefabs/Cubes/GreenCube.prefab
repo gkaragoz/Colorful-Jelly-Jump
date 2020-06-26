@@ -113,7 +113,11 @@ MonoBehaviour:
   _damageRate: 0
   _pointsRate: 2
   _impactCount: 1
-  _paleColorEffect: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
+  _paleColorEffect: {r: 0, g: 1, b: 0.007843138, a: 0.5019608}
+  _initialBaseColor: {r: 0, g: 1, b: 0.007843138, a: 1}
+  _targetBaseColor: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+  _initialEmissionColor: {x: 0, y: 173, z: 83}
+  _targetEmissionColor: {x: 0, y: 0, z: 0}
 --- !u!1001 &153976919099117017
 PrefabInstance:
   m_ObjectHideFlags: 0

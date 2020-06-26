@@ -19,17 +19,39 @@ public class CubeMaster : MonoBehaviour
     [SerializeField]
     private Color _paleColorEffect = Color.cyan;
 
+    [SerializeField]
+    private Color _initialBaseColor = Color.cyan;
+
+    [SerializeField]
+    private Color _targetBaseColor = Color.cyan;
+
+    [SerializeField]
+    private Vector3 _initialEmissionColor = Vector3.zero;
+
+    [SerializeField]
+    private Vector3 _targetEmissionColor = Vector3.zero;
+
+    //
+
     private MaterialPropertyBlock _blockMPB;
+
     private int _baseColorShaderID;
+
     private int _emissionColorShaderID;
-    private Renderer _blockRenderer;
+
+    private Renderer _cubeRenderer;
+
+    //
 
     private void Awake()
     {
         _blockMPB = new MaterialPropertyBlock();
+
         _baseColorShaderID = Shader.PropertyToID("_BaseColor");
+
         _emissionColorShaderID = Shader.PropertyToID("_EmissionColor");
-        _blockRenderer = GetComponent<MeshRenderer>();
+
+        _cubeRenderer = GetComponent<MeshRenderer>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -123,38 +145,64 @@ public class CubeMaster : MonoBehaviour
     {
         _impactCount = 0;
 
-        // TODO
-
-        //StartCoroutine(IChangeColor(targetColor, duration));
-
-        Debug.Log("Stoned effect on cube");
+        StartCoroutine("IChangeStoneColor");
     }
 
-    private IEnumerator IChangeColor(Color to, float duration)
+    private IEnumerator IChangeStoneColor()
     {
-        while (false)
+        float i = 0;
+
+        while (true)
         {
+            Color changedBaseColor = Color.Lerp(_initialBaseColor, _targetBaseColor, i);
 
+            Vector3 changedEmissionColor = Vector3.zero;
 
-            //Color changedBaseColor = Color.Lerp(from, to, t);
-            //Color changedEmissionColor = Color.Lerp(from, to, t);
+            _blockMPB.SetColor(_baseColorShaderID, changedBaseColor);
 
-            //_blockMPB.SetColor(_baseColorShaderID, Color.red);
-            //_blockMPB.SetColor(_emissionColorShaderID, Color.blue);
+            _blockMPB.SetColor(_emissionColorShaderID, new Color(changedEmissionColor.x, changedEmissionColor.y,
+                changedEmissionColor.z));
 
-            //_blockRenderer.SetPropertyBlock(_blockMPB);
+            _cubeRenderer.SetPropertyBlock(_blockMPB);
 
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(.05f);
+
+            i += 0.1f;
+
+            if (i >= 2)
+            {
+                break;
+            }
+        }
+    }
+
+    private IEnumerator IChangePaleColor()
+    {
+        float i = 0;
+
+        while (true)
+        {
+            Color changedBaseColor = Color.Lerp(_initialBaseColor, _paleColorEffect, i);
+
+            _blockMPB.SetColor(_baseColorShaderID, changedBaseColor);
+
+            _cubeRenderer.SetPropertyBlock(_blockMPB);
+
+            yield return new WaitForSeconds(.05f);
+
+            i += 0.1f;
+
+            if (i >= 1)
+            {
+                break;
+            }
         }
     }
 
     // Enables Pale effect on Cube
     public void PaleEffectOnCube(float duration)
     {
-        // TODO
-       //  GetComponent<MeshRenderer>().material.DOColor(_paleColorEffect, duration);
-
-        Debug.Log("Pale effect on cube");
+        StartCoroutine("IChangePaleColor");
     }
 
     // Makes Cube Interaction to None
