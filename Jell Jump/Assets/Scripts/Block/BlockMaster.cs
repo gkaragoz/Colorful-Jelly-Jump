@@ -5,9 +5,6 @@ using DG.Tweening;
 public class BlockMaster : MonoBehaviour
 {
     [SerializeField]
-    private Color _paleColor = Color.gray;
-
-    [SerializeField]
     public BlockState _blockState = BlockState.NORMAL;
 
     [SerializeField]
@@ -53,7 +50,7 @@ public class BlockMaster : MonoBehaviour
                 case BlockState.STONED:
                     {
                         // Invokes cube's deactive states
-                        cube.DeactiveState(_paleColor, 3);
+                        cube.DeactiveState();
 
                         if (i == cubeMasters.Length)
                         {
@@ -67,7 +64,7 @@ public class BlockMaster : MonoBehaviour
                 case BlockState.FRAGILE:
                     {
                         // Invokes cube's deactive states
-                        cube.DeactiveState(_paleColor, 3);
+                        cube.DeactiveState();
 
                         if(i == cubeMasters.Length)
                         {
@@ -80,7 +77,7 @@ public class BlockMaster : MonoBehaviour
                 case BlockState.ENDGAME:
                     {
                         // Invokes cube's deactive states
-                        cube.DeactiveState(_paleColor, 1);
+                        cube.DeactiveState();
 
                         break;
                     }

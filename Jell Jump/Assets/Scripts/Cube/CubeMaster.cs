@@ -141,7 +141,7 @@ public class CubeMaster : MonoBehaviour
     }
 
     // Changes Cube Color
-    public void DeactiveState(Color targetColor, float duration)
+    public void DeactiveState()
     {
         _impactCount = 0;
 
