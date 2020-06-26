@@ -57,6 +57,13 @@ public class GameManager : MonoBehaviour
         _gameState = GameState.ONGAMEOVER;
 
         GetComponent<CameraManager>().CameraAction(CameraAnimationState.ANIM_CLOSEFOCUS, OnComplete);
+
+        // AS GOLD
+        MyCharacter.CalculateGoldReward(LevelManager.instance.CurrentLevelIndex,
+            LevelManager.instance.CurrentLevelTier);
+
+        // Save Current Game
+        SaveGame();
     }
 
     // Invokes when the current level is finished
