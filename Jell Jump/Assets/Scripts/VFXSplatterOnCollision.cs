@@ -25,7 +25,7 @@ public class VFXSplatterOnCollision : MonoBehaviour {
         ParticlePhysicsExtensions.GetCollisionEvents(_VFXSplatter, other, _collisionEvents);
 
         for (int ii = 0; ii < _collisionEvents.Count; ii++) {
-            _VFXDecal.transform.position = _collisionEvents[ii].intersection;
+            _VFXDecal.transform.position = _collisionEvents[ii].intersection + (Vector3.up * 0.01f);
             var main = _VFXDecal.main;
             main.startSize = Random.Range(_decalSizeMin, _decalSizeMax);
             main.startRotationZ = Random.Range(0f, 360f); 
