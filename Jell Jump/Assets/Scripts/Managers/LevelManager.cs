@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject _endPointPrefab = null;
 
+    private int _lastLevelCount = 10;
+
     public int CurrentLevelTier = 1;
 
     public int CurrentLevelIndex = 1;
@@ -63,21 +65,20 @@ public class LevelManager : MonoBehaviour
         // Stop "LevelStatusController" Coroutine
         StopCoroutine("LevelStatusController");
 
-        Debug.Log("LEVEL FINISHED...");
-
         // Fill Level Bar
         UIManager.instance.UpdateLevelBar(_endPointPrefab.transform.position.y,
             _endPointPrefab.transform.position.y);
 
-        // TODO
         // Load new Level
-
-        // RestartLevel();
+        LoadNewLevel();
     }
 
-    public static void LoadNewLevel()
+    public void LoadNewLevel()
     {
-        // TODO
-        
+        // Load new Level
+        if (CurrentLevelIndex != _lastLevelCount)
+        {
+            SceneManager.LoadScene("Level" + (CurrentLevelIndex + 1));
+        }
     }
 }
