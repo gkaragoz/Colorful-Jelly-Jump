@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null) { instance = this; }
+        if (instance == null) { instance = this; 
+        
+            MyCharacter = FindObjectOfType<Character>();
+        }
 
         else if (instance != this) { Destroy(gameObject); }
     }
@@ -22,8 +25,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        MyCharacter = FindObjectOfType<Character>();
-
         // TODO
         Screen.orientation = ScreenOrientation.Portrait;
 
