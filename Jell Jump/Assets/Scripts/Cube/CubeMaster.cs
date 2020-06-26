@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public class CubeMaster : MonoBehaviour
 {
@@ -17,6 +18,19 @@ public class CubeMaster : MonoBehaviour
 
     [SerializeField]
     private Color _paleColorEffect = Color.cyan;
+
+    private MaterialPropertyBlock _blockMPB;
+    private int _baseColorShaderID;
+    private int _emissionColorShaderID;
+    private Renderer _blockRenderer;
+
+    private void Awake()
+    {
+        _blockMPB = new MaterialPropertyBlock();
+        _baseColorShaderID = Shader.PropertyToID("_BaseColor");
+        _emissionColorShaderID = Shader.PropertyToID("_EmissionColor");
+        _blockRenderer = GetComponent<MeshRenderer>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -110,9 +124,28 @@ public class CubeMaster : MonoBehaviour
         _impactCount = 0;
 
         // TODO
-        // GetComponent<MeshRenderer>().material.DOColor(targetColor, duration);
+
+        //StartCoroutine(IChangeColor(targetColor, duration));
 
         Debug.Log("Stoned effect on cube");
+    }
+
+    private IEnumerator IChangeColor(Color to, float duration)
+    {
+        while (false)
+        {
+
+
+            //Color changedBaseColor = Color.Lerp(from, to, t);
+            //Color changedEmissionColor = Color.Lerp(from, to, t);
+
+            //_blockMPB.SetColor(_baseColorShaderID, Color.red);
+            //_blockMPB.SetColor(_emissionColorShaderID, Color.blue);
+
+            //_blockRenderer.SetPropertyBlock(_blockMPB);
+
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     // Enables Pale effect on Cube
