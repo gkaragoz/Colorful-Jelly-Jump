@@ -109,14 +109,19 @@ public class CubeMaster : MonoBehaviour
     {
         _impactCount = 0;
 
-        GetComponent<MeshRenderer>().material.DOColor(targetColor, duration);
+        // TODO
+        // GetComponent<MeshRenderer>().material.DOColor(targetColor, duration);
+
+        Debug.Log("Stoned effect on cube");
     }
 
     // Enables Pale effect on Cube
     public void PaleEffectOnCube(float duration)
     {
         // TODO
-        GetComponent<MeshRenderer>().material.DOColor(_paleColorEffect, duration);
+       //  GetComponent<MeshRenderer>().material.DOColor(_paleColorEffect, duration);
+
+        Debug.Log("Pale effect on cube");
     }
 
     // Makes Cube Interaction to None
