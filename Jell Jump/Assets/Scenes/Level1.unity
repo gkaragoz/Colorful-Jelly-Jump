@@ -3276,8 +3276,8 @@ ParticleSystem:
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
-  prewarm: 1
+  looping: 0
+  prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -3345,7 +3345,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: Infinity
+      scalar: 150
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3416,7 +3416,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.011650123, g: 0.5796276, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -3478,7 +3478,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 0.30283332
       minScalar: 0.1
       maxCurve:
         serializedVersion: 2
@@ -3689,7 +3689,7 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 7.4761105
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4111,7 +4111,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -4123,15 +4123,6 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 0.026992708
-          value: 0.97706413
           inSlope: 0.0000004595283
           outSlope: 0.0000004595283
           tangentMode: 0
@@ -4139,8 +4130,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.78515846
-          value: 0.9702408
+          time: 0.0009016488
+          value: 1
           inSlope: 0.020818641
           outSlope: 0.020818641
           tangentMode: 0
@@ -4148,8 +4139,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 0
+          time: 0.27943832
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -11203,8 +11194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _VFXDecal: {fileID: 1094458063}
-  _decalSizeMin: 0.2
-  _decalSizeMax: 0.4
+  _decalSizeMin: 0.05
+  _decalSizeMax: 0.2
   _gradient:
     serializedVersion: 2
     key0: {r: 0.08018869, g: 0.85563564, b: 1, a: 1}
@@ -11242,7 +11233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036342863712204364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7899215, y: 1.6878662, z: -4.692004}
+  m_LocalPosition: {x: 0.7899215, y: 0.91, z: -4.692004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 948706583}
