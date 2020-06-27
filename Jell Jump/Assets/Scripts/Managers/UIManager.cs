@@ -19,9 +19,6 @@ public class UIManager : MonoBehaviour
     #endregion
 
     [SerializeField]
-    private GameObject _joystickPrefab = null;
-
-    [SerializeField]
     private TextMeshProUGUI _levelScoreText = null;
 
     [SerializeField]
@@ -124,18 +121,5 @@ public class UIManager : MonoBehaviour
     public void EnableOnGameUI()
     {
         _inGameUI.SetActive(true);
-    }
-
-    // Activate to Joystick
-    public void InstantiateJoystick()
-    {
-        // Clone the PJoystick Prefab
-        Instantiate(_joystickPrefab);
-    }
-
-    // Deactivate to Joystick
-    public void DisableJoystick()
-    {
-        _joystickPrefab.SetActive(false);
     }
 }

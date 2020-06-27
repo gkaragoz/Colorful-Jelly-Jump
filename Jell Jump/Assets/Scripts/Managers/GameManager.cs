@@ -46,9 +46,6 @@ public class GameManager : MonoBehaviour
         // Enable OnPlay UI
         UIManager.instance.EnableOnGameUI();
 
-        // Enable Joystick
-        UIManager.instance.InstantiateJoystick();
-
         // Save Current Game
         SaveGame();
     }
@@ -108,6 +105,11 @@ public class GameManager : MonoBehaviour
     public void LoadGame()
     {
         SaveManager.instance.LoadGame();
+    }
+
+    public void RestartGame()
+    {
+        LevelManager.instance.RestartLevel();
     }
 
     private void OnComplete()
