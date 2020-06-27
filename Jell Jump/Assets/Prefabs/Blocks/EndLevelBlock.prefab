@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blockState: 1
+  _blockState: 3
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
   _paleEffectDuration: 1

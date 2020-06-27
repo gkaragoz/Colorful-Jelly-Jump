@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject _endPointPrefab = null;
 
-    private int _lastLevelCount = 10;
+    private int _lastLevelCount = 19;
 
     public int CurrentLevelTier = 1;
 

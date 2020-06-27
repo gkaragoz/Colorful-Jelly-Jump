@@ -309,9 +309,8 @@ public class Character : MonoBehaviour
             StartCoroutine("ComboTimer");
 
             // Increase Combo count
-            _comboCount *= point;
+            _comboCount += point * LevelManager.instance.CurrentLevelIndex;
 
-            // TODO
             // Update UI FOR COMBO
             UIManager.instance.UpdateComboPoint(_comboCount);
 
@@ -338,6 +337,9 @@ public class Character : MonoBehaviour
         _onCombo = true;
 
         yield return new WaitForSeconds(_comboHoldTime);
+
+        // Increase level point via combocount
+        IncreaseLevelPoint(_comboCount);
 
         // Reset Combo
 
