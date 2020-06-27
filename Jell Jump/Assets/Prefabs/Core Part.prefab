@@ -619,6 +619,7 @@ GameObject:
   - component: {fileID: 1084042306622488711}
   - component: {fileID: 1084042306622488712}
   - component: {fileID: 1084042306622488713}
+  - component: {fileID: 1394443235}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -670,8 +671,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _endPointPrefab: {fileID: 0}
-  CurrentLevelTier: 1
-  CurrentLevelIndex: 1
+  CurrentLevelTier: 2
+  CurrentLevelIndex: 13
 --- !u!114 &1084042306622488709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,6 +744,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b400d846ff00ef64c9d27674aada24af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1394443235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084042306622488710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c63df019c6dbe347af65225c5d56754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &168495527947493125
@@ -903,11 +916,31 @@ PrefabInstance:
       propertyPath: _feverJumpDefaultRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1983578687522612705, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: _jumpLevelRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983578687522612705, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: _feverJumpLevelRate
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1983578687522612714, guid: fc5e8c81263f272448b0503bcca282da,
         type: 3}
       propertyPath: _indicatorPrefab
       value: 
       objectReference: {fileID: 832201476749158953}
+    - target: {fileID: 3903142124102060040, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_EffectIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903142124102060040, guid: fc5e8c81263f272448b0503bcca282da,
+        type: 3}
+      propertyPath: m_Stiffness
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7922507843719768320, guid: fc5e8c81263f272448b0503bcca282da,
         type: 3}
       propertyPath: m_LocalPosition.x

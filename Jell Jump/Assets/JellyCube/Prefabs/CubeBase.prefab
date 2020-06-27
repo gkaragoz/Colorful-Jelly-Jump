@@ -4926,7 +4926,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd40694481cdc534ea64b928d421c46c, type: 2}
+  - {fileID: 2100000, guid: 4b89221bece7d224e8e18d7ba8ec9f4c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4973,10 +4973,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Presets: 0
-  m_EffectIntensity: 0.4
+  m_EffectIntensity: 1
   m_Damping: 0.85
   m_Mass: 2
-  m_Stiffness: 0.5
+  m_Stiffness: 0.75
   sleeping: 0
 --- !u!54 &1569175252
 Rigidbody:
@@ -5012,9 +5012,10 @@ MonoBehaviour:
   _jumpLevelRate: 10
   _healthLevel: 0
   _totalGold: 6
+  _totalPoint: 0
   _feverJumpLevelRate: 6
   _feverJumpLevel: 0
-  _feverJumpDefaultRate: 7
+  _feverJumpDefaultRate: 5
   _maxScale: 0.35
   _minScale: 0.25
   _comboHoldTime: 3
@@ -5060,7 +5061,7 @@ MonoBehaviour:
   _indicatorPrefab: {fileID: 326467468492554350, guid: 46d4b7a276e94a1499ecf25747f5d74b,
     type: 3}
   _minJumpPower: 1
-  _maxJumpPower: 5
+  _maxJumpPower: 4
   _indicatorRate: 0.04
   _jumpPower: 0
   _jumpIncreaseRate: 0.25
