@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4451460551981492168}
   - component: {fileID: 7700283442496033349}
   m_Layer: 0
-  m_Name: HardGreenCube
+  m_Name: BlueCube
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 326e0f8ec3de74142984bbf02858f009, type: 2}
+  - {fileID: 2100000, guid: f49f58c542b64834d9143782d564a147, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,10 +113,10 @@ MonoBehaviour:
   _damageRate: 0
   _pointsRate: 3
   _impactCount: 1
-  _paleColorEffect: {r: 0.015686275, g: 0.6901961, b: 0, a: 0.5019608}
-  _initialBaseColor: {r: 0, g: 0.6784314, b: 0.003921569, a: 1}
+  _paleColorEffect: {r: 0.28235295, g: 0.83137256, b: 0, a: 0.5019608}
+  _initialBaseColor: {r: 0.28235295, g: 0.83137256, b: 0, a: 1}
   _targetBaseColor: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
-  _initialEmissionColor: {x: 0, y: 86, z: 42}
+  _initialEmissionColor: {x: 76, y: 84, z: 255}
   _targetEmissionColor: {x: 0, y: 0, z: 0}
 --- !u!1001 &539072360683893447
 PrefabInstance:
