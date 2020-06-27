@@ -99,7 +99,7 @@ public class JumpIndicator : MonoBehaviour
     // When button is pressed
     private void OnPressed()   
     {
-        if (CharacterMovement._canJump)
+        if (GameManager.instance.MyCharacter.GetComponent<CharacterMovement>().GetCanJump())
         {
             // Visible JumpIndicator
             ShowIndicator();

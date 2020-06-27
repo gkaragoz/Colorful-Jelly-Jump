@@ -287,10 +287,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.5820894
       objectReference: {fileID: 0}
+    - target: {fileID: 1084042305618017602, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1084042305623774846, guid: f97526b093f1cd045b25e6382a4c87b1,
         type: 3}
       propertyPath: m_FollowOffset.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084042305726366374, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1084042305801800382, guid: f97526b093f1cd045b25e6382a4c87b1,
         type: 3}
@@ -321,6 +331,26 @@ PrefabInstance:
         type: 3}
       propertyPath: CurrentLevelTier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676072728879858479, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1768930766}
+    - target: {fileID: 2676072728879858479, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676072728879858479, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676072728879858479, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1394443235, guid: f97526b093f1cd045b25e6382a4c87b1, type: 3}
@@ -1102,6 +1132,18 @@ Transform:
   m_Father: {fileID: 948706583}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1768930766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1084042306622488711, guid: f97526b093f1cd045b25e6382a4c87b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 122482536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e0fb955ae1ba8408c7eacfe700c988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1885199752
 PrefabInstance:
   m_ObjectHideFlags: 0

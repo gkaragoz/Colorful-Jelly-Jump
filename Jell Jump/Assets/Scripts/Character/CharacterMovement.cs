@@ -20,8 +20,12 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     public static bool _isLanded = true;
 
-    [SerializeField]
-    public static bool _canJump = true;
+    private bool _canJump = true;
+
+    public bool GetCanJump()
+    {
+        return _canJump;
+    }
 
     // Handle character jump
     public void Jump(float jumpPower, float jumpAxis)
