@@ -56,11 +56,6 @@ public class MarketManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _txtUpgradeFeverCost = null;
 
-    private void Start()
-    {
-        // Update Market Content
-        UpdateMarketContents();
-    }
 
     public void UpdateMarketContents()
     {

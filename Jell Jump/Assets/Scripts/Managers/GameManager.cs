@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
 
         // Load saved game
         LoadGame();
+
+        // Update Market Content
+        MarketManager.instance.UpdateMarketContents();
     }
 
     // Invokes when start to game
