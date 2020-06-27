@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -470,6 +470,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Core Part
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084042305285516638, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.9098039
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084042305285516638, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.5686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084042305285516638, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.9529412
       objectReference: {fileID: 0}
     - target: {fileID: 1084042305320020001, guid: f97526b093f1cd045b25e6382a4c87b1,
         type: 3}

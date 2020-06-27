@@ -21,7 +21,8 @@ public enum BlockState
     NORMAL,
     STONED,
     FRAGILE,
-    ENDGAME
+    ENDGAME,
+    BONUS
 }
 
 public enum CameraAnimationState

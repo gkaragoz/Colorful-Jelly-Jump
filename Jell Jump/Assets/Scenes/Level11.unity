@@ -380,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 1084042304736016592, guid: f97526b093f1cd045b25e6382a4c87b1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1084042304736016592, guid: f97526b093f1cd045b25e6382a4c87b1,
         type: 3}
@@ -402,6 +402,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core Part
       objectReference: {fileID: 0}
+    - target: {fileID: 1084042305285516638, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.909804
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084042305285516638, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.5686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084042305285516638, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.95294124
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084042305285516639, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5820894
+      objectReference: {fileID: 0}
     - target: {fileID: 1084042305320020001, guid: f97526b093f1cd045b25e6382a4c87b1,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -451,6 +471,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084042305623774846, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_FollowOffset.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084042305801800382, guid: f97526b093f1cd045b25e6382a4c87b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.71000004
       objectReference: {fileID: 0}
     - target: {fileID: 1084042305865068195, guid: f97526b093f1cd045b25e6382a4c87b1,
         type: 3}

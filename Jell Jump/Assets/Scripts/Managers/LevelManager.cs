@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour
 
     public int CurrentLevelIndex = 1;
 
+    public bool _isBonusLevel;
+
     public float CurrentRemainingDistance { get; private set; }
 
     private void Start()
