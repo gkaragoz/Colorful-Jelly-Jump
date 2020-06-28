@@ -159,7 +159,7 @@ public class JumpIndicator : MonoBehaviour
 
         while (true)
         {
-            yield return new WaitForSeconds(_indicatorRate);
+            yield return new WaitForEndOfFrame();
 
             if(increaseMode)
             {
