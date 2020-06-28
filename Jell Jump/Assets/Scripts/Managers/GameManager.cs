@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
         if (instance == null) { instance = this; 
         
             MyCharacter = FindObjectOfType<Character>();
+
+            Application.targetFrameRate = 60;
         }
 
         else if (instance != this) { Destroy(gameObject); }
