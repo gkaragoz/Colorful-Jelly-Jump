@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForEndOfFrame();
 
             // Controls distance between character and end point
             DistanceController();

@@ -28,9 +28,6 @@ public class UIManager : MonoBehaviour
     private Image _levelBar = null;
 
     [SerializeField]
-    private Image _levelBackground = null;
-
-    [SerializeField]
     private TextMeshProUGUI _totalGoldText = null;
 
     [SerializeField]
@@ -58,17 +55,19 @@ public class UIManager : MonoBehaviour
         UpdateTotalScore(GameManager.instance.MyCharacter.GetTotalGold());
     }
 
-    public void UpdateLevelBar(float currentDistance, float distanceMaxLimit)
+    public void UpdateLevelBar(float currentDistance, float maxPlayerPosY)
     {
-        float BGLength = _levelBackground.GetComponent<RectTransform>().rect.width;
+        float playerPosY = GameManager.instance.MyCharacter.transform.localPosition.y;
 
-        float BGHight = _levelBackground.GetComponent<RectTransform>().rect.height;
+        float minPlayerPosY = -2.11f;
 
-        float PBRate = currentDistance / distanceMaxLimit;
+        float minUIPosX = -295;
 
-        float PBLength = BGLength * PBRate;
+        float maxUIPosX = 320;
 
-        _levelBar.GetComponent<RectTransform>().sizeDelta = new Vector2(PBLength, BGHight);
+        float mappedUIPosX = ExtensionMethods.Map(playerPosY, minPlayerPosY, maxPlayerPosY - 3.25f, minUIPosX, maxUIPosX);
+
+        _levelBar.rectTransform.anchoredPosition = new Vector2(mappedUIPosX, _levelBar.rectTransform.anchoredPosition.y);
     }
 
     public void UpdateTotalScore(int currentTotalScore)
@@ -83,7 +82,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTotalGold(int currentGold)
     {
-        _totalGoldText.text = "Gold: " + currentGold.ToString();
+        _totalGoldText.text = currentGold.ToString();
 
         Debug.Log("Gold: " + currentGold.ToString());
     }
