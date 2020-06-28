@@ -73,7 +73,7 @@ public class MarketManager : MonoBehaviour
 
             _txtUpgradePower.text = "Power " + "Lv" + (powerLevel + 1);
 
-            _txtUpgradePowerCost.text = _powerValuesByLevel[powerLevel].ToString() + " Gold";
+            _txtUpgradePowerCost.text = _powerValuesByLevel[powerLevel].ToString();
 
             if ( (character.GetTotalGold() >= _powerValuesByLevel[character.GetJumpLevel()]) == false)
             {
@@ -87,7 +87,7 @@ public class MarketManager : MonoBehaviour
 
             _txtUpgradePower.text = "Power " + "Lv" + powerLevel;
 
-            _txtUpgradePowerCost.text = _powerValuesByLevel[powerLevel - 1].ToString() + " Gold";
+            _txtUpgradePowerCost.text = _powerValuesByLevel[powerLevel - 1].ToString();
         }
 
         if (_healthValuesByLevel.Length > healthLevel)
@@ -96,7 +96,7 @@ public class MarketManager : MonoBehaviour
 
             _txtUpgradeHealth.text = "Health " + "Lv" + (healthLevel + 1);
 
-            _txtUpgradeHealthCost.text = _healthValuesByLevel[healthLevel].ToString() + " Gold";
+            _txtUpgradeHealthCost.text = _healthValuesByLevel[healthLevel].ToString();
 
             if ( (character.GetTotalGold() >= _healthValuesByLevel[character.GetHealthLevel()]) == false)
             {
@@ -110,7 +110,7 @@ public class MarketManager : MonoBehaviour
 
             _txtUpgradeHealth.text = "Health " + "Lv" + healthLevel;
 
-            _txtUpgradeHealthCost.text = _healthValuesByLevel[healthLevel - 1].ToString() + " Gold";
+            _txtUpgradeHealthCost.text = _healthValuesByLevel[healthLevel - 1].ToString();
         }
 
         if (_feverValuesByLevel.Length > feverLevel)
@@ -119,7 +119,7 @@ public class MarketManager : MonoBehaviour
 
             _txtUpgradeFever.text = "Fever " + "Lv" + (feverLevel + 1);
 
-            _txtUpgradeFeverCost.text = _feverValuesByLevel[feverLevel].ToString() + " Gold";
+            _txtUpgradeFeverCost.text = _feverValuesByLevel[feverLevel].ToString();
 
             if ( (character.GetTotalGold() >= _feverValuesByLevel[character.GetFeverJumpLevel()]) == false)
             {
@@ -133,7 +133,7 @@ public class MarketManager : MonoBehaviour
 
             _txtUpgradeFever.text = "Fever " + "Lv" + feverLevel;
 
-            _txtUpgradeFeverCost.text = _feverValuesByLevel[feverLevel - 1].ToString() + " Gold";
+            _txtUpgradeFeverCost.text = _feverValuesByLevel[feverLevel - 1].ToString();
         }
     }
 
