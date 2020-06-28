@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &244803220576222968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2513208454039373856}
+  - component: {fileID: 6013471827487188652}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2513208454039373856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244803220576222968}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.072, z: 0}
+  m_LocalScale: {x: 0.64000005, y: 0.64000005, z: 0.64000005}
+  m_Children: []
+  m_Father: {fileID: 1180319086470584607}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6013471827487188652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244803220576222968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.184561, y: 0.2738758, z: 1.5792972}
+  m_Center: {x: 1.5409629, y: 0.07261225, z: 0}
 --- !u!1 &919696138340645636
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +78,7 @@ Transform:
   - {fileID: 3813373435217098695}
   - {fileID: 4030305529246066953}
   - {fileID: 3003941996910532223}
+  - {fileID: 1385729733275009978}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,11 +94,186 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
   _paleEffectDuration: 1
+--- !u!1 &2690433772415468487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385729733275009978}
+  - component: {fileID: 3275946439462553212}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1385729733275009978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690433772415468487}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.072, z: 0}
+  m_LocalScale: {x: 0.64000005, y: 0.64000005, z: 0.64000005}
+  m_Children: []
+  m_Father: {fileID: 5040496039072835082}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3275946439462553212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690433772415468487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.184561, y: 0.2738758, z: 1.5792972}
+  m_Center: {x: 1.5409629, y: 0.07261225, z: 0}
+--- !u!1 &3721996993753858554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5355409939105833732}
+  - component: {fileID: 3230959142383252169}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5355409939105833732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721996993753858554}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.072, z: 0}
+  m_LocalScale: {x: 0.64000005, y: 0.64000005, z: 0.64000005}
+  m_Children: []
+  m_Father: {fileID: 7679445429446160026}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3230959142383252169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721996993753858554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.184561, y: 0.2738758, z: 1.5792972}
+  m_Center: {x: 1.5409629, y: 0.07261225, z: 0}
+--- !u!1 &4082221505827162792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6072553376075293738}
+  - component: {fileID: 2526069941164172665}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6072553376075293738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082221505827162792}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.072, z: 0}
+  m_LocalScale: {x: 0.64000005, y: 0.64000005, z: 0.64000005}
+  m_Children: []
+  m_Father: {fileID: 1884396248761754775}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2526069941164172665
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082221505827162792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.184561, y: 0.2738758, z: 1.5792972}
+  m_Center: {x: 1.5409629, y: 0.07261225, z: 0}
+--- !u!1 &4172949959923416936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8961390494705020600}
+  - component: {fileID: 1851408618140640885}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8961390494705020600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4172949959923416936}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.04, z: 0}
+  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0.79999995}
+  m_Children: []
+  m_Father: {fileID: 6501153630309849144}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1851408618140640885
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4172949959923416936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3163202, y: 0.27387583, z: 1.2642245}
+  m_Center: {x: 1.2053664, y: 0.07261225, z: 0}
 --- !u!1 &5422372745165321685
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,6 +302,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8961390494705020600}
   - {fileID: 4908705099816690012}
   - {fileID: 6245973078244415601}
   - {fileID: 1700947797631304672}
@@ -103,11 +324,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
   _paleEffectDuration: 1
+--- !u!1 &6489657344803240797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8818568122254094455}
+  - component: {fileID: 2811650218250117588}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8818568122254094455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6489657344803240797}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.072, z: 0}
+  m_LocalScale: {x: 0.64000005, y: 0.64000005, z: 0.64000005}
+  m_Children: []
+  m_Father: {fileID: 6627752868849761281}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2811650218250117588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6489657344803240797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.184561, y: 0.2738758, z: 1.5792972}
+  m_Center: {x: 1.5409629, y: 0.07261225, z: 0}
 --- !u!1 &7074279019271034971
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +406,7 @@ Transform:
   - {fileID: 1558846405044371674}
   - {fileID: 969131627289773474}
   - {fileID: 2642546995048788983}
+  - {fileID: 2513208454039373856}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -157,7 +422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
@@ -196,6 +460,7 @@ Transform:
   - {fileID: 786784248570634245}
   - {fileID: 3256254378486460966}
   - {fileID: 5433249660172837404}
+  - {fileID: 8818568122254094455}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -211,7 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
@@ -250,6 +514,7 @@ Transform:
   - {fileID: 1353065605662917869}
   - {fileID: 5805089229470010772}
   - {fileID: 3943633388110950243}
+  - {fileID: 5355409939105833732}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -265,7 +530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
@@ -340,6 +604,7 @@ Transform:
   - {fileID: 2426247344323437647}
   - {fileID: 1413980216729917822}
   - {fileID: 752453331423197037}
+  - {fileID: 6072553376075293738}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -355,7 +620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
@@ -405,7 +669,7 @@ PrefabInstance:
     - target: {fileID: 2680012036006878387, guid: f1c2baa219f49024c93d3d7252582aff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2680012036006878387, guid: f1c2baa219f49024c93d3d7252582aff,
         type: 3}
@@ -1355,7 +1619,7 @@ PrefabInstance:
     - target: {fileID: 2680012036006878387, guid: f1c2baa219f49024c93d3d7252582aff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2680012036006878387, guid: f1c2baa219f49024c93d3d7252582aff,
         type: 3}
@@ -1435,7 +1699,7 @@ PrefabInstance:
     - target: {fileID: 5926124740446864782, guid: a9052a7ab731624498a051c22916c090,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5926124740446864782, guid: a9052a7ab731624498a051c22916c090,
         type: 3}
@@ -1945,7 +2209,7 @@ PrefabInstance:
     - target: {fileID: 1682424351634286406, guid: 486f8f650c749af448070955bebae840,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1682424351634286406, guid: 486f8f650c749af448070955bebae840,
         type: 3}
@@ -2200,7 +2464,7 @@ PrefabInstance:
     - target: {fileID: 1682424351634286406, guid: 486f8f650c749af448070955bebae840,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1682424351634286406, guid: 486f8f650c749af448070955bebae840,
         type: 3}
@@ -2725,7 +2989,7 @@ PrefabInstance:
     - target: {fileID: 5926124740446864782, guid: a9052a7ab731624498a051c22916c090,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5926124740446864782, guid: a9052a7ab731624498a051c22916c090,
         type: 3}

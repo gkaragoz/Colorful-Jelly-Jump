@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &649098448683759704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4848432450999743879}
+  - component: {fileID: 6788969952054949909}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4848432450999743879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649098448683759704}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.050176006, z: 0}
+  m_LocalScale: {x: 0.26214, y: 0.26214, z: 0.26214}
+  m_Children: []
+  m_Father: {fileID: 7679445429446160026}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6788969952054949909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649098448683759704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.769335, y: 0.6620454, z: 3.8453686}
+  m_Center: {x: 1.9965148, y: 0.26669708, z: 0}
 --- !u!1 &919696138340645636
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,6 +76,7 @@ Transform:
   - {fileID: 8210449703591077375}
   - {fileID: 1343759593979459939}
   - {fileID: 4030305529246066953}
+  - {fileID: 6743405114842900902}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,11 +92,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
   _paleEffectDuration: 1
+--- !u!1 &3115877103990124329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6120638321108620731}
+  - component: {fileID: 2677196942697222149}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6120638321108620731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115877103990124329}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.09800001, z: 0}
+  m_LocalScale: {x: 0.51199996, y: 0.51199996, z: 0.51199996}
+  m_Children: []
+  m_Father: {fileID: 1180319086470584607}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2677196942697222149
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115877103990124329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.436304, y: 0.2738758, z: 1.962503}
+  m_Center: {x: 1.0347896, y: 0.07261225, z: 0}
+--- !u!1 &4991026142071565287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8561026266952387644}
+  - component: {fileID: 5339427070299925526}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8561026266952387644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991026142071565287}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0784, z: 0}
+  m_LocalScale: {x: 0.4096, y: 0.4096, z: 0.4096}
+  m_Children: []
+  m_Father: {fileID: 6627752868849761281}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5339427070299925526
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991026142071565287}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.3355775, y: 0.38095677, z: 2.4699998}
+  m_Center: {x: 1.2703673, y: 0.12615274, z: 0}
 --- !u!1 &5422372745165321685
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,6 +216,7 @@ Transform:
   - {fileID: 1700947797631304672}
   - {fileID: 2609536154984754583}
   - {fileID: 931853396709987279}
+  - {fileID: 3126656445503520821}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,11 +232,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
   _paleEffectDuration: 1
+--- !u!1 &5655413728644959332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4461469826880244494}
+  - component: {fileID: 4721598383971957710}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4461469826880244494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5655413728644959332}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.098000005, z: 0}
+  m_LocalScale: {x: 0.51199996, y: 0.51199996, z: 0.51199996}
+  m_Children: []
+  m_Father: {fileID: 1884396248761754775}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4721598383971957710
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5655413728644959332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.436304, y: 0.2738758, z: 1.962503}
+  m_Center: {x: 1.0347896, y: 0.07261225, z: 0}
 --- !u!1 &7074279019271034971
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +312,7 @@ Transform:
   - {fileID: 4227569444697117841}
   - {fileID: 1558846405044371674}
   - {fileID: 3532917444772820415}
+  - {fileID: 6120638321108620731}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -151,11 +328,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
   _paleEffectDuration: 1
+--- !u!1 &7445649709472233774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3126656445503520821}
+  - component: {fileID: 8496857823619607798}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3126656445503520821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445649709472233774}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.040140804, z: 0}
+  m_LocalScale: {x: 0.20971, y: 0.20971, z: 0.20971}
+  m_Children: []
+  m_Father: {fileID: 6501153630309849144}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8496857823619607798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445649709472233774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.421219, y: 0.87119246, z: 4.876177}
+  m_Center: {x: 2.488012, y: 0.37127063, z: 0}
 --- !u!1 &7540870197547243658
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +408,7 @@ Transform:
   - {fileID: 7544998465333399016}
   - {fileID: 1108383987918931971}
   - {fileID: 2242031261073305675}
+  - {fileID: 8561026266952387644}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -203,7 +424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
@@ -240,6 +460,7 @@ Transform:
   - {fileID: 6803367950993413480}
   - {fileID: 5805089229470010772}
   - {fileID: 3943633388110950243}
+  - {fileID: 4848432450999743879}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,11 +476,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1
   _paleEffectDuration: 1
+--- !u!1 &8560002257417080968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6743405114842900902}
+  - component: {fileID: 7008421709996409241}
+  m_Layer: 11
+  m_Name: VFXSplashHiddenCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6743405114842900902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560002257417080968}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.06272, z: 0}
+  m_LocalScale: {x: 0.32768, y: 0.32768, z: 0.32768}
+  m_Children: []
+  m_Father: {fileID: 5040496039072835082}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7008421709996409241
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560002257417080968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.3662305, y: 0.52819306, z: 3.0775435}
+  m_Center: {x: 1.6116874, y: 0.1997709, z: 0}
 --- !u!1 &8998238217803194263
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +592,7 @@ Transform:
   - {fileID: 1964252571430849089}
   - {fileID: 1413980216729917822}
   - {fileID: 752453331423197037}
+  - {fileID: 4461469826880244494}
   m_Father: {fileID: 2818158956679528697}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -343,7 +608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b7e957b5b7b745ace43f5fc8714bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _blockState: 0
   _fragileBlockScaleDuration: 1
   _fragileBlockWaitDuration: 1

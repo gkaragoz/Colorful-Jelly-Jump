@@ -4,6 +4,9 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField]
+    private VFXSplatterOnCollision _VFXSplash = null;
+
+    [SerializeField]
     [Tooltip("Increase value for more stretching")]
     private float _stretchMultiplier = .25f;
 
@@ -102,6 +105,16 @@ public class CharacterMovement : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = false;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            //VFX.
+            _VFXSplash.transform.parent.position = transform.position;
+            _VFXSplash.Play(Vector3.up, 1f, 4);
+        }
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -115,6 +128,10 @@ public class CharacterMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             _isLanded = false;
+
+            //VFX.
+            _VFXSplash.transform.parent.position = transform.position;
+            _VFXSplash.Play(Vector3.down, 1f, 2);
         }
     }
 }

@@ -357,6 +357,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 086bc5f9d5b93a24e986e33fb40a7fc2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 086bc5f9d5b93a24e986e33fb40a7fc2, type: 3}
 --- !u!1 &185765152 stripped
@@ -621,12 +626,12 @@ PrefabInstance:
     - target: {fileID: 1084042305285516639, guid: f97526b093f1cd045b25e6382a4c87b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5734569
+      value: 0.5261112
       objectReference: {fileID: 0}
     - target: {fileID: 1084042305285516639, guid: f97526b093f1cd045b25e6382a4c87b1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.37089
+      value: -11.3704815
       objectReference: {fileID: 0}
     - target: {fileID: 1084042305285516639, guid: f97526b093f1cd045b25e6382a4c87b1,
         type: 3}
