@@ -128,7 +128,13 @@ public class JumpIndicator : MonoBehaviour
     // Indicator location handler
     public void IndicatorLocator()
     {
-        _indicatorPrefab.transform.position = new Vector3(transform.position.x, transform.position.y + .1f, 0);
+        _indicatorPrefab.transform.position = new Vector3(transform.position.x, transform.position.y + .125f, 0);
+    }
+
+    public void IndicatorScaler()
+    {
+        _indicatorPrefab.transform.localScale = Vector3.Lerp(new Vector3(_indicatorPrefab.transform.localScale.x, 0, _indicatorPrefab.transform.localScale.z), new Vector3(_indicatorPrefab.transform.localScale.x, .1f, _indicatorPrefab.transform.localScale.z),
+            _jumpPower / _maxJumpPower);
     }
 
     // Indicator color change handler
@@ -148,6 +154,8 @@ public class JumpIndicator : MonoBehaviour
 
         // Reset JumpIndicator Color to initial color
         ColorChanger(_indicatorPrefab);
+
+        IndicatorScaler();
 
         while (true)
         {
@@ -183,6 +191,8 @@ public class JumpIndicator : MonoBehaviour
 
             // Update JumpIndicator Color
             ColorChanger(_indicatorPrefab);
+
+            IndicatorScaler();
         }
     }
 
