@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
         // Enable OnPlay UI
         UIManager.instance.EnableOnGameUI();
 
+        // Update UI Content
+        UIManager.instance.UpdateGoldAndScore();
+
         // Save Current Game
         SaveGame();
     }

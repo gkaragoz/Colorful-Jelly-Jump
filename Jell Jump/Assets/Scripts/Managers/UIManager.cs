@@ -51,7 +51,7 @@ public class UIManager : MonoBehaviour
     // Stores UI's current state
     private UIState _state = UIState.UI_STARTGAME;
 
-    private void Start()
+    public void UpdateGoldAndScore()
     {
         UpdateTotalGold(GameManager.instance.MyCharacter.GetTotalGold());
 

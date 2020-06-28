@@ -1089,6 +1089,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_InGame
       objectReference: {fileID: 0}
+    - target: {fileID: 1349706246766960615, guid: 57e7d39c44a351a49989972c70ee5df1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3800376368020100897, guid: 57e7d39c44a351a49989972c70ee5df1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1199,11 +1204,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1084042306622488711}
-    - target: {fileID: 5393784222934022692, guid: 57e7d39c44a351a49989972c70ee5df1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57e7d39c44a351a49989972c70ee5df1, type: 3}
 --- !u!1 &1084042305618017602 stripped
