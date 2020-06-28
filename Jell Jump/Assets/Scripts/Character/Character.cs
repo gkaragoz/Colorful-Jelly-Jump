@@ -8,6 +8,9 @@ using System.Collections;
 public class Character : MonoBehaviour
 {
     [SerializeField]
+    private ParticleSystem[] _VFXFeverJump = null;
+
+    [SerializeField]
     [Tooltip("Defines Health increase rate for each level-up as below formula\n" +
         "HealthLevel = HealthLevel + _healthIncreaseRate;")]
     private int _healthIncreaseRate = 25;
@@ -270,6 +273,23 @@ public class Character : MonoBehaviour
         _jumpRate = ((_feverJumpLevelRate * _feverJumpLevel * _feverJumpDefaultRate) / 100) + _feverJumpDefaultRate;
 
         GetComponent<CharacterMovement>().Jump(_jumpRate);
+
+        // FEVER VFX.
+        PlayFeverVFX();
+
+    }
+
+    private void PlayFeverVFX()
+    {
+        _VFXFeverJump[0].gameObject.transform.position = new Vector3(
+            transform.position.x, 
+            transform.position.y, 
+            _VFXFeverJump[0].gameObject.transform.position.z);
+
+        _VFXFeverJump[0].Emit(3);
+        _VFXFeverJump[1].Emit(16);
+        _VFXFeverJump[2].Emit(6);
+        _VFXFeverJump[3].Emit(1);
     }
 
     //private void Update()

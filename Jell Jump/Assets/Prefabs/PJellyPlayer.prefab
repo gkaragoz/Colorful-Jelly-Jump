@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 278370613, guid: 85999f1bbe6b7954ea4f038fdef81a45, type: 3}
+      propertyPath: _VFXFeverJump.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 278370613, guid: 85999f1bbe6b7954ea4f038fdef81a45, type: 3}
+      propertyPath: _VFXFeverJump.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 278370613, guid: 85999f1bbe6b7954ea4f038fdef81a45, type: 3}
+      propertyPath: _VFXFeverJump.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 278370613, guid: 85999f1bbe6b7954ea4f038fdef81a45, type: 3}
+      propertyPath: _VFXFeverJump.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 278370613, guid: 85999f1bbe6b7954ea4f038fdef81a45, type: 3}
+      propertyPath: _VFXFeverJump.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 278370620, guid: 85999f1bbe6b7954ea4f038fdef81a45, type: 3}
       propertyPath: _stretchMultiplier
       value: 0.2
