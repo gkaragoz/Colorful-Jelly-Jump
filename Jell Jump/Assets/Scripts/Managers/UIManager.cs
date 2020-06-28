@@ -94,7 +94,20 @@ public class UIManager : MonoBehaviour
 
     public void UpdateComboPoint(int point)
     {
+        _comboPointText.gameObject.SetActive(true);
+
         _comboPointText.text = "x" + point.ToString();
+
+        LeanTween.scale(_comboPointText.gameObject, Vector3.one * 1, 0.5f).setFrom(Vector3.zero).setEaseOutElastic().setOnComplete(() =>
+        {
+            LeanTween.delayedCall(0.5f, () =>
+            {
+                LeanTween.scale(_comboPointText.gameObject, Vector3.zero, 0.3f).setEaseOutExpo().setOnComplete(() =>
+                {
+                    _comboPointText.gameObject.SetActive(false);
+                });
+            });
+        });
     }
 
     // Deactivate to ComboText

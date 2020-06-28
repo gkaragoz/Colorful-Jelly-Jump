@@ -4,11 +4,29 @@ using DG.Tweening;
 
 public class CameraManager : MonoBehaviour
 {
+    #region Singleton
+
+    public static CameraManager instance;
+
+    private void Awake()
+    {
+        if (instance == null) {
+
+            instance = this;
+
+            // Assing current fow distance of vcam
+            _defaultFowDistance = vcam.m_Lens.FieldOfView;
+        }
+
+        else if (instance != this) { Destroy(gameObject); }
+    }
+
+    #endregion
+
     [SerializeField]
     private float _targetFowDistanceOnGameOver = 20;
 
-    [SerializeField]
-    private float _fowAnimationDuration = 1.25f;
+    private float _fowAnimationDuration = 3;
 
     [SerializeField]
     private float _targetFocusDistance = 30;
@@ -22,11 +40,6 @@ public class CameraManager : MonoBehaviour
     [SerializeField]
     private CinemachineVirtualCamera vcam = null;
 
-    private void Awake()
-    {
-        // Assing current fow distance of vcam
-        _defaultFowDistance = vcam.m_Lens.FieldOfView;
-    }
 
     public void SET(float value)
     {

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +20,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     private GameObject _endPointPrefab = null;
+    [SerializeField]
+    private ParticleSystem _VFXConfetti = null;
 
     private int _lastLevelCount = 20;
 
@@ -71,8 +74,19 @@ public class LevelManager : MonoBehaviour
         UIManager.instance.UpdateLevelBar(_endPointPrefab.transform.position.y,
             _endPointPrefab.transform.position.y);
 
-        // Load new Level
-        LoadNewLevel();
+
+        _VFXConfetti.Play();
+
+        CameraManager.instance.CameraAction(CameraAnimationState.ANIM_CLOSEFOCUS, OnComplete);
+    }
+
+    private void OnComplete()
+    {
+        LeanTween.delayedCall(.5f, () =>
+        {
+            // Load new Level
+            LoadNewLevel();
+        });
     }
 
     public void LoadNewLevel()
