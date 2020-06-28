@@ -34,6 +34,9 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI _comboPointText = null;
 
     [SerializeField]
+    private TextMeshProUGUI _currentLevelIndex = null;
+
+    [SerializeField]
     private GameObject _startGameUI = null;
 
     [SerializeField]
@@ -48,11 +51,13 @@ public class UIManager : MonoBehaviour
     // Stores UI's current state
     private UIState _state = UIState.UI_STARTGAME;
 
-    public void UpdateGoldAndScore()
+    public void UIElements()
     {
         UpdateTotalGold(GameManager.instance.MyCharacter.GetTotalGold());
 
         UpdateTotalScore(GameManager.instance.MyCharacter.GetTotalGold());
+
+        _currentLevelIndex.text = LevelManager.instance.CurrentLevelIndex.ToString();
     }
 
     public void UpdateLevelBar(float currentDistance, float maxPlayerPosY)

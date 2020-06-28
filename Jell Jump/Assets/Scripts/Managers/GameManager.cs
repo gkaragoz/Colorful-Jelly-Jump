@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         UIManager.instance.EnableOnGameUI();
 
         // Update UI Content
-        UIManager.instance.UpdateGoldAndScore();
+        UIManager.instance.UIElements();
 
         // Save Current Game
         SaveGame();
